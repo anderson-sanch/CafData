@@ -18,7 +18,7 @@
 mono_crash.*
 
 # Ignorar configuración sensible (base de datos, conexiones, etc.)
-appsettings.json
+appsettings*.json
 
 # Build results
 [Dd]ebug/
