@@ -1,8 +1,12 @@
-﻿namespace Back_Proyecto.Models
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Back_Proyecto.Models
 {
     public class Price_History
 
     {
+        [Key]
         public Guid History_Id { get; set; }
         public Guid Product_Id { get; set; }
         public decimal Previous_Price { get; set; }

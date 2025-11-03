@@ -8,9 +8,10 @@ namespace Back_Proyecto.Models
     {
         
         public Guid Role_Id { get; set; } // Foreign key to Roles
+        public Roles Role { get; set; } = null;// Navigation property for related Role
+
         public Guid Permission_Id { get; set; } // Foreign key to Permission
-        public Roles Role { get; set; } // Navigation property for related Role
-        public Permissions Permission { get; set; } // Navigation property for related Permission
+        public Permissions Permission { get; set; } = null; // Navigation property for related Permission
 
     }
 }

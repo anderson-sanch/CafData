@@ -1,8 +1,12 @@
-﻿namespace Back_Proyecto.Models
+﻿using System.ComponentModel.DataAnnotations;      
+using System.ComponentModel.DataAnnotations.Schema; 
+
+namespace Back_Proyecto.Models
 {
     public class Clients
 
     {
+        [Key]
         public Guid Client_Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }

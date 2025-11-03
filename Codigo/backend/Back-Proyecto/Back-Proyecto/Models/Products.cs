@@ -1,8 +1,12 @@
-﻿namespace Back_Proyecto.Models
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Back_Proyecto.Models
 {
     public class Products
 
     {
+        [Key]
         public Guid Product_Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }

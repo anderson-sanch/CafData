@@ -1,7 +1,11 @@
-﻿namespace Back_Proyecto.Models
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Back_Proyecto.Models
 {
     public class System_Log
     {
+        [Key]
         public Guid Log_Id { get; set; }
         public Guid User_Id { get; set; }
         public string Action { get; set; }
