@@ -5,10 +5,7 @@ namespace Back_Proyecto.Models
 {
     public class Users // Users class representing user entities
     {
-        [Key] // Primary Key
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)] // Auto-generate value
-
-        public Guid User_Id { get; set; } = Guid.NewGuid(); // Initialize with a new GUID
+        public Guid User_Id { get; set; }
         public string Name { get; set; } // User's full name
         public string Username { get; set; } // Unique username
         public string Password { get; set; } // User's password
