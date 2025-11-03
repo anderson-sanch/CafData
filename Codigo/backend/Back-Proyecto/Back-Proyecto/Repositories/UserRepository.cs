@@ -36,8 +36,13 @@ namespace Back_Proyecto.Repositories
         {
             try
             {
-                user.User_Id = Guid.NewGuid();
-                user.Creation_Date = DateTime.Now;
+                bool existingUser = await _context.Users.AnyAsync(u => u.Username.ToLower() == user.Username.ToLower());
+
+                if (existingUser) 
+                {
+                    throw new Exception("No puedes usar este Nombre de usuario, intenta con otro");
+                    
+                }
 
                 _context.Users.Add(user);
                 await _context.SaveChangesAsync();
