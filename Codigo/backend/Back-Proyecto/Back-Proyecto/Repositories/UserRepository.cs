@@ -32,30 +32,39 @@ namespace Back_Proyecto.Repositories
 
         }
 
-        public async Task<bool> CreateUser(Users user)
+        public async Task<Users> CreateUser(Users user)
         {
             try
             {
+                user.User_Id = Guid.NewGuid();
+                user.Creation_Date = DateTime.Now;
+
                 _context.Users.Add(user);
                 await _context.SaveChangesAsync();
-                return true;
+
+                return user;
+            }
+            catch (DbUpdateException ex)
+            {
+                var innerMessage = ex.InnerException?.Message ?? ex.Message;
+                throw new Exception($"Error al insertar usuario (DB): {innerMessage}");
             }
             catch (Exception ex)
             {
-                return false;
-                throw new Exception(ex.Message.ToString());
+                throw new Exception($"Error al insertar usuario: {ex.Message}");
             }
         }
 
-        public async Task<bool> UpdateUser(Users user)
+
+
+        public async Task<Users> UpdateUser(Users user)
         {
             try
             {
                 var ExistingUser = await _context.Users.FindAsync(user.User_Id);
                 if (ExistingUser == null)
                 {
-                    return false;
-                    throw new Exception("Usuario no encontrado");
+                    return null;
                 }
 
                 ExistingUser.Name = user.Name;
@@ -66,14 +75,15 @@ namespace Back_Proyecto.Repositories
 
                 _context.Users.Update(ExistingUser);
                 await _context.SaveChangesAsync();
-                return true;
+
+                return ExistingUser; 
             }
             catch (Exception ex)
             {
-                return false;
-                throw new Exception(ex.Message.ToString());
+                throw new Exception($"Error al actualizar usuario: {ex.Message}");
             }
         }
+
 
         public async Task<bool> DeleteUser(Guid id)
         {

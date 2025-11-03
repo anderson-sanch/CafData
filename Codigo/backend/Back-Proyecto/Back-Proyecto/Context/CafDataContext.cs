@@ -27,7 +27,7 @@ namespace Back_Proyecto.Context
                 entity.Property(e => e.Password).IsRequired().HasMaxLength(50).HasColumnName("Password");
                 entity.Property(e => e.Rol_Id).IsRequired().HasColumnName("Rol_Id");
                 entity.Property(e => e.Status).IsRequired().HasMaxLength(15).HasColumnName("Status");
-                entity.Property(e => e.Creation_Date).IsRequired().HasColumnName("Creattion_Date").HasDefaultValueSql("GETDATE()");
+                entity.Property(e => e.Creation_Date).IsRequired().HasColumnName("Creation_Date").HasDefaultValueSql("GETDATE()");
 
                 entity.HasOne(u => u.Rol).WithMany(r => r.Users).HasForeignKey(u => u.Rol_Id).OnDelete(DeleteBehavior.Restrict);
             });
