@@ -21,13 +21,13 @@ namespace Back_Proyecto.Context
         {
             modelBuilder.Entity<Users>(entity =>
             {
-                entity.HasKey(e => e.User_Id);
+                entity.Property(e => e.User_Id).HasDefaultValueSql("NEWID()");
                 entity.Property(e => e.Name).IsRequired().HasMaxLength(50).HasColumnName("Name");
                 entity.Property(e => e.Username).IsRequired().HasMaxLength(15).HasColumnName("Username");
                 entity.Property(e => e.Password).IsRequired().HasMaxLength(50).HasColumnName("Password");
                 entity.Property(e => e.Rol_Id).IsRequired().HasColumnName("Rol_Id");
                 entity.Property(e => e.Status).IsRequired().HasMaxLength(15).HasColumnName("Status");
-                entity.Property(e => e.Creation_Date).IsRequired().HasColumnName("Creattion_Date");
+                entity.Property(e => e.Creation_Date).IsRequired().HasColumnName("Creattion_Date").HasDefaultValueSql("GETDATE()");
 
                 entity.HasOne(u => u.Rol).WithMany(r => r.Users).HasForeignKey(u => u.Rol_Id).OnDelete(DeleteBehavior.Restrict);
             });
