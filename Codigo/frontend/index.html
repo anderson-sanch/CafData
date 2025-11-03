@@ -1,13 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CafData_html</title>
-    <link rel="stylesheet" href="./src/librerias/bootstrap/css/bootstrap.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SVGITC - Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
-    <div class="gb-red-500"></div>
-    <script src="./src/librerias/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand__name">SVGITC</div>
+        </div>
+        <nav class="menu">
+            <a class="menu__item menu__item--active" href="index.html"><span>Dashboard</span></a>
+            <a class="menu__item" href="inventario.html"><span>Inventario</span></a>
+            <a class="menu__item" href="ventas.html"><span>Ventas</span></a>
+            <a class="menu__item" href="clientes.html"><span>Clientes</span></a>
+            <a class="menu__item" href="reportes.html"><span>Reportes</span></a>
+            <a class="menu__item" href="personal.html"><span>Personal</span></a>
+            <a class="menu__item" href="notificaciones.html"><span>Notificaciones</span></a>
+            <a class="menu__item" href="configuracion.html"><span>Configuración</span></a>
+        </nav>
+    </aside>
+
+    <main class="content">
+        <header class="topbar">
+            <h1 class="topbar__title">Dashboard</h1>
+            <div class="topbar__right">
+                <span class="badge">admin</span>
+            </div>
+        </header>
+
+        <section class="cards">
+            <article class="card">
+                <div class="card__icon"></div>
+                <div class="card__body">
+                    <h3 class="card__title">Ventas hoy</h3>
+                    <p class="card__value">$2,450,000</p>
+                    <span class="chip chip--success">+12%</span>
+                </div>
+            </article>
+            <article class="card">
+                <div class="card__icon"></div>
+                <div class="card__body">
+                    <h3 class="card__title">Ordenes</h3>
+                    <p class="card__value">84</p>
+                    <span class="chip chip--success">+8%</span>
+                </div>
+            </article>
+            <article class="card">
+                <div class="card__icon"></div>
+                <div class="card__body">
+                    <h3 class="card__title">Productos</h3>
+                    <p class="card__value">382</p>
+                    <span class="chip chip--danger">-3%</span>
+                </div>
+            </article>
+        </section>
+
+        <section class="panel">
+            <div class="panel__header">
+                <h2 class="panel__title">Órdenes recientes</h2>
+            </div>
+            <div class="table">
+                <div class="table__row table__row--head">
+                    <div class="table__cell">ID</div>
+                    <div class="table__cell">Cliente</div>
+                    <div class="table__cell">Total</div>
+                    <div class="table__cell">Estado</div>
+                    <div class="table__cell">Fecha</div>
+                    <div class="table__cell">Acciones</div>
+                </div>
+                <div class="table__row">
+                    <div class="table__cell">#001</div>
+                    <div class="table__cell">María González</div>
+                    <div class="table__cell">$45,000</div>
+                    <div class="table__cell"><span class="chip chip--success">Completada</span></div>
+                    <div class="table__cell">12/09/2025</div>
+                    <div class="table__cell"><span class="link">Ver detalles</span></div>
+                </div>
+                <div class="table__row">
+                    <div class="table__cell">#002</div>
+                    <div class="table__cell">Carlos López</div>
+                    <div class="table__cell">$32,000</div>
+                    <div class="table__cell"><span class="chip chip--success">Completada</span></div>
+                    <div class="table__cell">23/04/2024</div>
+                    <div class="table__cell"><span class="link">Ver detalles</span></div>
+                </div>
+                <div class="table__row">
+                    <div class="table__cell">#003</div>
+                    <div class="table__cell">Ana Martínez</div>
+                    <div class="table__cell">$98,000</div>
+                    <div class="table__cell"><span class="chip chip--success">Completada</span></div>
+                    <div class="table__cell">14/05/2025</div>
+                    <div class="table__cell"><span class="link">Ver detalles</span></div>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
