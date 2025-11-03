@@ -21,6 +21,8 @@ namespace Back_Proyecto.Context
         {
             modelBuilder.Entity<Users>(entity =>
             {
+
+
                 entity.Property(e => e.User_Id).HasDefaultValueSql("NEWID()");
                 entity.Property(e => e.Name).IsRequired().HasMaxLength(50).HasColumnName("Name");
                 entity.Property(e => e.Username).IsRequired().HasMaxLength(15).HasColumnName("Username");
