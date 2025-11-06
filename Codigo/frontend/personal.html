@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <style> .menu a[href="personal.html"]{background:var(--coffee-700);color:#fff;} </style>
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><div class="brand__name">SVGITC</div></div>
+    <nav class="menu">
+      <a class="menu__item" href="index.html"><span>Dashboard</span></a>
+      <a class="menu__item" href="inventario.html"><span>Inventario</span></a>
+      <a class="menu__item" href="ventas.html"><span>Ventas</span></a>
+      <a class="menu__item" href="clientes.html"><span>Clientes</span></a>
+      <a class="menu__item" href="reportes.html"><span>Reportes</span></a>
+      <a class="menu__item" href="personal.html"><span>Personal</span></a>
+      <a class="menu__item" href="notificaciones.html"><span>Notificaciones</span></a>
+      <a class="menu__item" href="configuracion.html"><span>Configuración</span></a>
+    </nav>
+  </aside>
+  <main class="content">
+    <header class="topbar"><h1 class="topbar__title">Gestión de Personal</h1></header>
+
+    <section class="kpis">
+      <article class="kpi"><div class="kpi__icon"></div><div><h3 class="kpi__title">Total empleados</h3><p class="kpi__value">12</p><span class="chip chip--success">+2</span></div></article>
+      <article class="kpi"><div class="kpi__icon"></div><div><h3 class="kpi__title">Empleados activos</h3><p class="kpi__value">10</p><span class="chip chip--success">80%</span></div></article>
+      <article class="kpi"><div class="kpi__icon"></div><div><h3 class="kpi__title">Turnos de hoy</h3><p class="kpi__value">8</p><span class="chip chip--warning">En progreso</span></div></article>
+    </section>
+
+    <section class="panel" style="padding:16px; display:grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+      <div class="tile" style="text-align:left">
+        <div style="font-weight:700">Mario Hernández</div>
+        <div style="color:var(--text-700)">Cajero</div>
+        <div class="chip chip--warning" style="margin-top:8px">12:00 - 19:00</div>
+      </div>
+      <div class="tile" style="text-align:left">
+        <div style="font-weight:700">Ana Martínez</div>
+        <div style="color:var(--text-700)">Mesera</div>
+        <div class="chip chip--success" style="margin-top:8px">09:00 - 17:00</div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

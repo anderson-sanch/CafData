@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ventas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <style> .menu a[href="ventas.html"]{background:var(--coffee-700);color:#fff;} </style>
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><div class="brand__name">SVGITC</div></div>
+    <nav class="menu">
+      <a class="menu__item" href="index.html"><span>Dashboard</span></a>
+      <a class="menu__item" href="inventario.html"><span>Inventario</span></a>
+      <a class="menu__item" href="ventas.html"><span>Ventas</span></a>
+      <a class="menu__item" href="clientes.html"><span>Clientes</span></a>
+      <a class="menu__item" href="reportes.html"><span>Reportes</span></a>
+      <a class="menu__item" href="personal.html"><span>Personal</span></a>
+      <a class="menu__item" href="notificaciones.html"><span>Notificaciones</span></a>
+      <a class="menu__item" href="configuracion.html"><span>Configuración</span></a>
+    </nav>
+  </aside>
+  <main class="content">
+    <header class="topbar"><h1 class="topbar__title">Módulo de ventas</h1></header>
+
+    <div class="toolbar">
+      <input class="search" placeholder="Buscar productos, clientes..." />
+      <button class="btn btn--ghost">Limpiar</button>
+      <button class="btn btn--ghost">Procesar</button>
+    </div>
+
+    <section class="panel" style="display:grid; grid-template-columns: 1fr 320px; gap: 16px; padding: 16px;">
+      <div>
+        <h3 style="margin:0 0 12px 0;">Punto de venta</h3>
+        <div style="display:grid; grid-template-columns: repeat(3, 120px); gap: 12px;">
+          <div class="tile">Capuccino<br><small>$6,000</small></div>
+          <div class="tile">Latte<br><small>$6,500</small></div>
+          <div class="tile">Pastel<br><small>$8,000</small></div>
+        </div>
+      </div>
+      <aside class="form" style="height:fit-content">
+        <h3 style="margin:0 0 8px 0">Carrito de compras</h3>
+        <div class="table" style="gap:8px">
+          <div class="menu-card__item"><span>Café Americano</span><span>$9,000</span></div>
+          <div class="menu-card__item"><span>Capuccino</span><span>$6,000</span></div>
+          <div class="menu-card__item"><span>Pastel</span><span>$8,000</span></div>
+        </div>
+        <div style="display:grid; gap:6px; font-size:14px; color:var(--text-700); margin-top:6px;">
+          <div style="display:flex; justify-content:space-between"><span>Subtotal</span><span>$18,000</span></div>
+          <div style="display:flex; justify-content:space-between"><span>IVA (9%)</span><span>$1,620</span></div>
+          <div style="display:flex; justify-content:space-between; font-weight:700; color:var(--text-900)"><span>Total</span><span>$19,620</span></div>
+        </div>
+        <div style="margin-top:10px; display:grid; gap:6px;">
+          <span class="label">Método de Pago</span>
+          <div style="display:grid; gap:6px;">
+            <div class="tile">Efectivo</div>
+            <div class="tile">Tarjeta</div>
+            <div class="tile">Transferencia</div>
+          </div>
+        </div>
+      </aside>
+    </section>
+  </main>
+</body>
+</html>
+
+

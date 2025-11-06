@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reportes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <style> .menu a[href="reportes.html"]{background:var(--coffee-700);color:#fff;} </style>
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><div class="brand__name">SVGITC</div></div>
+    <nav class="menu">
+      <a class="menu__item" href="index.html"><span>Dashboard</span></a>
+      <a class="menu__item" href="inventario.html"><span>Inventario</span></a>
+      <a class="menu__item" href="ventas.html"><span>Ventas</span></a>
+      <a class="menu__item" href="clientes.html"><span>Clientes</span></a>
+      <a class="menu__item" href="reportes.html"><span>Reportes</span></a>
+      <a class="menu__item" href="personal.html"><span>Personal</span></a>
+      <a class="menu__item" href="notificaciones.html"><span>Notificaciones</span></a>
+      <a class="menu__item" href="configuracion.html"><span>Configuración</span></a>
+    </nav>
+  </aside>
+  <main class="content">
+    <header class="topbar"><h1 class="topbar__title">Gestión de reportes</h1></header>
+
+    <section class="cards" style="grid-template-columns: repeat(4, 1fr);">
+      <article class="card"><div class="card__icon"></div><div class="card__body"><h3 class="card__title">Reporte de ventas</h3><p class="card__value">Listo</p></div></article>
+      <article class="card"><div class="card__icon"></div><div class="card__body"><h3 class="card__title">Reporte de clientes</h3><p class="card__value">Pendiente</p></div></article>
+      <article class="card"><div class="card__icon"></div><div class="card__body"><h3 class="card__title">Reporte inventario</h3><p class="card__value">Listo</p></div></article>
+      <article class="card"><div class="card__icon"></div><div class="card__body"><h3 class="card__title">Reporte de personal</h3><p class="card__value">Listo</p></div></article>
+    </section>
+
+    <section class="panel">
+      <div class="panel__header"><h2 class="panel__title">Lista de reportes</h2></div>
+      <div class="table">
+        <div class="table__row table__row--head"><div class="table__cell">Nombre</div><div class="table__cell">Estado</div><div class="table__cell">Fecha</div><div class="table__cell">Tipo</div><div class="table__cell">Acciones</div><div class="table__cell"></div></div>
+        <div class="table__row"><div class="table__cell">Reporte_financiero_05082025</div><div class="table__cell">Completado</div><div class="table__cell">05/08/2025</div><div class="table__cell">Financiero</div><div class="table__cell"><span class="link">Ver detalles</span></div><div class="table__cell"></div></div>
+        <div class="table__row"><div class="table__cell">Reporte_general_07082025</div><div class="table__cell">Completado</div><div class="table__cell">07/08/2025</div><div class="table__cell">General</div><div class="table__cell"><span class="link">Ver detalles</span></div><div class="table__cell"></div></div>
+        <div class="table__row"><div class="table__cell">Reporte_inventario_08052025</div><div class="table__cell">Completado</div><div class="table__cell">20/09/2025</div><div class="table__cell">Inventario</div><div class="table__cell"><span class="link">Ver detalles</span></div><div class="table__cell"></div></div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
+
