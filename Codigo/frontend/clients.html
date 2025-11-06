@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clientes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <style>
+        .menu a[href="clientes.html"] {
+            background: var(--coffee-700);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="brand"><div class="brand__name">SVGITC</div></div>
+        <nav class="menu">
+            <a class="menu__item" href="index.html"><span>Dashboard</span></a>
+            <a class="menu__item" href="inventario.html"><span>Inventario</span></a>
+            <a class="menu__item" href="ventas.html"><span>Ventas</span></a>
+            <a class="menu__item" href="clientes.html"><span>Clientes</span></a>
+            <a class="menu__item" href="reportes.html"><span>Reportes</span></a>
+            <a class="menu__item" href="personal.html"><span>Personal</span></a>
+            <a class="menu__item" href="notificaciones.html"><span>Notificaciones</span></a>
+            <a class="menu__item" href="configuracion.html"><span>Configuración</span></a>
+        </nav>
+    </aside>
+    <main class="content">
+        <header class="topbar"><h1 class="topbar__title">Clientes</h1></header>
+
+        <section class="kpis">
+            <article class="kpi"><div class="kpi__icon"></div><div><h3 class="kpi__title">Total clientes</h3><p class="kpi__value">5</p><span class="chip chip--success">activos</span></div></article>
+            <article class="kpi"><div class="kpi__icon"></div><div><h3 class="kpi__title">Clientes frecuentes</h3><p class="kpi__value">3</p><span class="chip chip--success">+1</span></div></article>
+            <article class="kpi"><div class="kpi__icon"></div><div><h3 class="kpi__title">Nuevos hoy</h3><p class="kpi__value">2</p><span class="chip chip--warning">creciendo</span></div></article>
+        </section>
+
+        <section class="panel">
+            <div class="panel__header"><h2 class="panel__title">Lista de clientes</h2></div>
+            <div class="table">
+                <div class="table__row table__row--head"><div class="table__cell">Nombre</div><div class="table__cell">Contacto</div><div class="table__cell">Estado</div><div class="table__cell">Registro</div><div class="table__cell">Tipo</div><div class="table__cell">Acciones</div></div>
+                <div class="table__row"><div class="table__cell">Hernesto</div><div class="table__cell">her@gmail.com</div><div class="table__cell">activo</div><div class="table__cell">08/05/2025</div><div class="table__cell">Frecuente</div><div class="table__cell"><span class="link">Ver detalles</span></div></div>
+                <div class="table__row"><div class="table__cell">Natalia</div><div class="table__cell">nat@hog.com</div><div class="table__cell">inactivo</div><div class="table__cell">05/06/2025</div><div class="table__cell">VIP</div><div class="table__cell"><span class="link">Ver detalles</span></div></div>
+                <div class="table__row"><div class="table__cell">Pepe</div><div class="table__cell">pep@gh.com</div><div class="table__cell">activo</div><div class="table__cell">20/09/2025</div><div class="table__cell">Nuevo</div><div class="table__cell"><span class="link">Ver detalles</span></div></div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
