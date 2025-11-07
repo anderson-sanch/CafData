@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Configuración</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <style> .menu a[href="configuracion.html"]{background:var(--coffee-700);color:#fff;} </style>
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><div class="brand__name">SVGITC</div></div>
+    <nav class="menu">
+      <a class="menu__item" href="index.html"><span>Dashboard</span></a>
+      <a class="menu__item" href="inventario.html"><span>Inventario</span></a>
+      <a class="menu__item" href="ventas.html"><span>Ventas</span></a>
+      <a class="menu__item" href="clientes.html"><span>Clientes</span></a>
+      <a class="menu__item" href="reportes.html"><span>Reportes</span></a>
+      <a class="menu__item" href="personal.html"><span>Personal</span></a>
+      <a class="menu__item" href="notificaciones.html"><span>Notificaciones</span></a>
+      <a class="menu__item" href="configuracion.html"><span>Configuración</span></a>
+    </nav>
+  </aside>
+  <main class="content">
+    <header class="topbar"><h1 class="topbar__title">Configuración General</h1></header>
+
+    <form class="form">
+      <div class="form__grid">
+        <div class="field"><label class="label">Nombre de la empresa</label><input class="input" placeholder="Cafetería SVGITC" /></div>
+        <div class="field"><label class="label">NIT</label><input class="input" placeholder="123456789" /></div>
+        <div class="field"><label class="label">Dirección</label><input class="input" placeholder="Calle 123" /></div>
+
+        <div class="field"><label class="label">Teléfono</label><input class="input" placeholder="300 000 0000" /></div>
+        <div class="field"><label class="label">Correo</label><input class="input" placeholder="admin@svgitc.com" /></div>
+        <div class="field"><label class="label">Zona horaria</label><input class="input" placeholder="GMT-5" /></div>
+
+        <div class="field"><label class="label">Idioma</label><input class="input" placeholder="Español" /></div>
+        <div class="field"><label class="label">Formato de fecha</label><input class="input" placeholder="DD/MM/AAAA" /></div>
+        <div class="field"><label class="label">Tipo de negocio</label><input class="input" placeholder="Cafetería" /></div>
+      </div>
+      <div style="display:flex; gap:10px; justify-content:flex-end;">
+        <button class="btn" type="button">Guardar</button>
+        <button class="btn btn--ghost" type="button">Cancelar</button>
+      </div>
+    </form>
+  </main>
+</body>
+</html>
+
