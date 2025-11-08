@@ -1,0 +1,5 @@
+body{
+    background-color: var(--coffee-200);
+    font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    color: var(--coffee-800);
+}
