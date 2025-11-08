@@ -1,0 +1,9 @@
+/* cartas para uso de informacion en vistas */
+.carta_cliente{
+    background-color: var(--coffee-100);
+    border: 1px solid var(--coffee-300);
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}

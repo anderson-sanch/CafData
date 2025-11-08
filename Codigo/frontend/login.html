@@ -1,12 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/css/main.css">
+    <script src="https://kit.fontawesome.com/951a17fb55.js" crossorigin="anonymous"></script>
     <title>CafData</title>
 </head>
-<body>
 
+<body>
+    <main class="login_main">
+        <!-- contenedor principal -->
+        <div>
+            <header class="login_main-header">
+                <img class="login_main_header-img" src="./src/imgs/Logo.png" alt="">
+                <h1 class="login_main_header-title">CafData</h1>
+                <p class="login_main_header-p">La inteligencia detrás de cada taza.</p>
+            </header>
+
+            <form class="login_main_form">
+                <div class="login_main_form-group">
+                    <div>
+                        <i class="fa-regular fa-envelope fa-lg"></i>
+                    </div>
+                    <input class="login_main_form-input" type="email" placeholder="Usuario">
+                </div>
+
+                <div class="login_main_form-group">
+                    <div>
+                        <i class="fa-solid fa-lock fa-lg"></i>
+                    </div>
+                    <input class="login_main_form-input" type="password" placeholder="Contraseña">
+                </div>
+
+                <div class="login_main_form-remember">
+                    <div>
+                        <div class="checkbox-container">
+                            <label class="ios-checkbox blue">
+                                <input type="checkbox" />
+                                <div class="checkbox-wrapper">
+                                    <div class="checkbox-bg"></div>
+                                    <svg fill="none" viewBox="0 0 24 24" class="checkbox-icon">
+                                        <path stroke-linejoin="round" stroke-linecap="round" stroke-width="3"
+                                            stroke="currentColor" d="M4 12L10 18L20 6" class="check-path"></path>
+                                    </svg>
+                                </div>
+                                <span class="checkbox-text">Recuérdame</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="login_main_form-btn" type="submit">Acceder al sistema</button>
+            </form>
+
+            <div class="login_main_error">
+                <p>¿Problemas para acceder? <a href="">Contacta al administrador</a></p>
+            </div>
+            
+            <div class="login_main_message">
+                <p>Sistema exclusivo para personal autorizado</p>
+            </div>
+        </div>
+        <!-- contenedor secunario -->
+        <div>
+
+        </div>
+    </main>
 </body>
+
 </html>
