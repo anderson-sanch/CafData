@@ -36,7 +36,25 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
 app.UseAuthentication();
+
 app.UseAuthorization();
+
+app.Use(async (context, next) =>
+{
+    await next();
+
+    if (context.Response.StatusCode == StatusCodes.Status401Unauthorized)
+    {
+        context.Response.ContentType = "application/json";
+        var result = System.Text.Json.JsonSerializer.Serialize(new
+        {
+            mensaje = "Acceso no autorizado. Verifique su token o credenciales."
+        });
+        await context.Response.WriteAsync(result);
+    }
+});
 app.MapControllers();
+
 app.Run();

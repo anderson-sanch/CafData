@@ -39,7 +39,7 @@ namespace Back_Proyecto.Controllers
                 new Claim(JwtRegisteredClaimNames.Sub, _config["JWT:Subject"]),
                 new Claim("User_Id", user.User_Id.ToString()),
                 new Claim("Username", user.Username),
-                new Claim("Rol_Id", user.Rol_Id.ToString())
+                new Claim("Rol", user.Rol.Name)
             };
 
             var token = new JwtSecurityToken(
