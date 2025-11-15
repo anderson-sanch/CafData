@@ -1,0 +1,20 @@
+{
+  "name": "cafdata-frontend",
+  "version": "1.0.0",
+  "description": "Proyecto con Bootstrap compilado desde SCSS",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "sass src/scss/custom.scss src/css/custom.css --no-source-map && postcss src/css/custom.css -o src/css/custom.css",
+    "watch:css": "sass --watch src/scss/custom.scss:src/css/custom.css --no-source-map"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.8"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.22",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "sass": "^1.94.0"
+  }
+}
+
