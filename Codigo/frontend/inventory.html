@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inventario</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./src/librerias/bootstrap/css/style.css">
+  <style> .menu a[href="inventario.html"]{background:var(--coffee-700);color:#fff;} </style>
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><div class="brand__name">SVGITC</div></div>
+    <nav class="menu">
+      <a class="menu__item" href="index.html"><span>Dashboard</span></a>
+      <a class="menu__item" href="inventario.html"><span>Inventario</span></a>
+      <a class="menu__item" href="ventas.html"><span>Ventas</span></a>
+      <a class="menu__item" href="clientes.html"><span>Clientes</span></a>
+      <a class="menu__item" href="reportes.html"><span>Reportes</span></a>
+      <a class="menu__item" href="personal.html"><span>Personal</span></a>
+      <a class="menu__item" href="notificaciones.html"><span>Notificaciones</span></a>
+      <a class="menu__item" href="configuracion.html"><span>Configuración</span></a>
+    </nav>
+  </aside>
+  <main class="content">
+    <header class="topbar"><h1 class="topbar__title">Inventario</h1></header>
+
+    <div class="toolbar">
+      <input class="search" placeholder="Buscar productos, clientes..." />
+      <button class="btn btn--ghost">Filtrar</button>
+      <button class="btn btn--ghost">Exportar</button>
+    </div>
+
+    <section class="kpis">
+      <article class="kpi"><div class="kpi__icon"></div><div><h3 class="kpi__title">Ítems en stock</h3><p class="kpi__value">173,000</p><span class="chip chip--success">+5%</span></div></article>
+      <article class="kpi"><div class="kpi__icon"></div><div><h3 class="kpi__title">Nuevos prod.</h3><p class="kpi__value">5</p><span class="chip chip--success">Agregados</span></div></article>
+      <article class="kpi"><div class="kpi__icon"></div><div><h3 class="kpi__title">Bajo stock</h3><p class="kpi__value">3</p><span class="chip chip--danger">Atención</span></div></article>
+    </section>
+
+    <section class="panel">
+      <div class="panel__header"><h2 class="panel__title">Lista de productos</h2></div>
+      <div class="table">
+        <div class="table__row table__row--head"><div class="table__cell">Producto</div><div class="table__cell">Categoría</div><div class="table__cell">Stock</div><div class="table__cell">Precio</div><div class="table__cell">Estado</div><div class="table__cell">Acciones</div></div>
+        <div class="table__row"><div class="table__cell">Café</div><div class="table__cell">Kg</div><div class="table__cell">15</div><div class="table__cell">$20,000</div><div class="table__cell">Disponible</div><div class="table__cell"><span class="link">Ver detalles</span></div></div>
+        <div class="table__row"><div class="table__cell">Azúcar</div><div class="table__cell">Kg</div><div class="table__cell">10</div><div class="table__cell">$40,000</div><div class="table__cell">Disponible</div><div class="table__cell"><span class="link">Ver detalles</span></div></div>
+        <div class="table__row"><div class="table__cell">Leche</div><div class="table__cell">Lt</div><div class="table__cell">8</div><div class="table__cell">$15,000</div><div class="table__cell">Agotado</div><div class="table__cell"><span class="link">Ver detalles</span></div></div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
+
+
+v
