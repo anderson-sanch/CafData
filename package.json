@@ -3,5 +3,10 @@
   "dependencies": {
     "@tailwindcss/cli": "^4.1.17",
     "tailwindcss": "^4.1.17"
+  },
+  "scripts": {
+    "build:css": "npx @tailwindcss/cli -i ./Codigo/frontend/src/css/input.css -o ./Codigo/frontend/src/css/output.css",
+    "watch:css": "npx @tailwindcss/cli -i ./Codigo/frontend/src/css/input.css -o ./Codigo/frontend/src/css/output.css --watch",
+    "dev:css": "npm run watch:css"
   }
 }
