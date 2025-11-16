@@ -1,0 +1,214 @@
+@import "tailwindcss";
+
+@layer base {
+    html {
+        font-size: 62.5%;
+    }
+}
+
+@layer theme {
+    :root {
+        /* Colores personalizados de café */
+        --coffee-500: #3b241b;
+        --coffee-400: #4a2f23;
+        --coffee-300: #5b3a2b;
+        --coffee-200: #e7d6cd;
+        --coffee-100: #f2e7e1;
+        --cream-50: #f7f1ee;
+        --text-primary: #2a201d;
+        --text-secondary: #5a4e49;
+        --success: #35b46d;
+        --danger: #e46b6b;
+        --warning: #f0b45a;
+
+        /* Tamaño de fuente personalizado Mobile */
+        --title-mobile: 2.8rem;
+        --sub-title-mobile: 2.2rem;
+        --little-title-mobile: 1.8rem;
+        --parraf-mobile: 1.5rem;
+        --secondary-parraf-mobile: 1.3rem;
+        --text-botton-mobile: 1.3rem;
+        --text-navigation-mobile: 1.4rem;
+
+        /* Tamaño de fuente personalizado Desktop */
+        --title-desktop: 4rem;
+        --sub-title-desktop: 3.2rem;
+        --little-title-desktop: 2.4rem;
+        --parraf-desktop: 1.6rem;
+        --secondary-parraf-desktop: 1.4rem;
+        --text-botton-desktop: 1.5rem;
+        --text-navigation-desktop: 1.6rem;
+
+    }
+}
+
+@layer utilities {
+
+    /* Utilidades para colores de fondo café */
+    .bg-coffee-100 {
+        background-color: var(--coffee-100);
+    }
+
+    .bg-coffee-200 {
+        background-color: var(--coffee-200);
+    }
+
+    .bg-coffee-300 {
+        background-color: var(--coffee-300);
+    }
+
+    .bg-coffee-400 {
+        background-color: var(--coffee-400);
+    }
+
+    .bg-coffee-500 {
+        background-color: var(--coffee-500);
+    }
+
+    .bg-coffee-success {
+        background-color: var(--success);
+    }
+
+    .bg-coffee-warning {
+        background-color: var(--warning);
+    }
+
+    .bg-coffee-danger {
+        background-color: var(--danger);
+    }
+
+    .bg-coffee-cream {
+        background-color: var(--cream-50);
+    }
+
+    /* Utilidades para colores de texto café */
+    .text-coffee-100 {
+        color: var(--coffee-100);
+    }
+
+    .text-coffee-200 {
+        color: var(--coffee-200);
+    }
+
+    .text-coffee-300 {
+        color: var(--coffee-300);
+    }
+
+    .text-coffee-400 {
+        color: var(--coffee-400);
+    }
+
+    .text-coffee-500 {
+        color: var(--coffee-500);
+    }
+
+    .text-coffee-success {
+        color: var(--success);
+    }
+
+    .text-coffee-warning {
+        color: var(--warning);
+    }
+
+    .text-coffee-danger {
+        color: var(--danger);
+    }
+
+    .text-coffee-primary {
+        color: var(--text-primary);
+    }
+
+    .text-coffee-secondary {
+        color: var(--text-secondary);
+    }
+
+    .text-coffee-cream {
+        color: var(--cream-50);
+    }
+
+
+    /* También puedes agregar bordes si quieres */
+    .border-coffee-100 {
+        border-color: var(--coffee-100);
+    }
+
+    .border-coffee-200 {
+        border-color: var(--coffee-200);
+    }
+
+    .border-coffee-300 {
+        border-color: var(--coffee-300);
+    }
+
+    .border-coffee-400 {
+        border-color: var(--coffee-400);
+    }
+
+    .border-coffee-500 {
+        border-color: var(--coffee-500);
+    }
+
+    .border-coffee-cream {
+        color: var(--cream-50);
+    }
+
+    /* ===== ESTILOS MOBILE (BASE) ===== */
+    .h1-mobile {
+        font-size: var(--title-mobile);
+    }
+
+    .h2-mobile {
+        font-size: var(--sub-title-mobile);
+    }
+
+    .h3-mobile {
+        font-size: var(--little-title-mobile);
+    }
+
+    .p-mobile {
+        font-size: var(--parraf-mobile);
+    }
+
+    .sec-p-mobile {
+        font-size: var(--secondary-parraf-mobile);
+    }
+
+    .button-mobile {
+        font-size: var(--text-botton-mobile);
+    }
+
+    .tex-nav-mobile {
+        font-size: var(--text-navigation-mobile);
+    }
+
+    /* ===== ESTILOS DESKTOP (RESPONSIVE) ===== */
+    @media (min-width: 1024px) {
+        .lg\:h1-desktop {
+            font-size: var(--title-desktop);
+        }
+
+        .lg\:h2-desktop {
+            font-size: var(--sub-title-desktop);
+        }
+
+        .lg\:h3-desktop {
+            font-size: var(--little-title-desktop);
+        }
+
+        .lg\:p-desktop {
+            font-size: var(--parraf-desktop);
+        }
+
+        .lg\:sec-p-desktop {
+            font-size: var(--secondary-parraf-desktop);
+        }
+
+        .lg\:button-desktop {
+            font-size: var(--text-botton-desktop);
+        }
+
+        .lg\:tex-nav-desktop {
+            font-size: var(--text-navigation-desktop);
+        }
+    }
+}
