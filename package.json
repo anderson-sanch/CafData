@@ -1,6 +1,7 @@
 {
   "type": "module",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^7.1.0",
     "@tailwindcss/cli": "^4.1.17",
     "tailwindcss": "^4.1.17"
   },

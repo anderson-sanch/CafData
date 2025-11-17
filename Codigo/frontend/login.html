@@ -4,70 +4,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="src/css/main.css">
-    <script src="https://kit.fontawesome.com/951a17fb55.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./src/css/output.css">
+    <link rel="stylesheet" href="./src/css/all.min.css">
+    <link rel="shortcut icon" href="./src/imgs/favicon.png" type="image/x-icon">
     <title>CafData</title>
 </head>
 
-<body>
-    <main class="login_main">
-        <!-- contenedor principal -->
-        <div>
-            <header class="login_main-header">
-                <img class="login_main_header-img" src="./src/imgs/Logo.png" alt="">
-                <h1 class="login_main_header-title">CafData</h1>
-                <p class="login_main_header-p">La inteligencia detrás de cada taza.</p>
-            </header>
+<body class="bg-coffee-200">
 
-            <form class="login_main_form">
-                <div class="login_main_form-group">
-                    <div>
-                        <i class="fa-regular fa-envelope fa-lg"></i>
-                    </div>
-                    <input class="login_main_form-input" type="email" placeholder="Usuario">
-                </div>
+    <main>
+        <!-- main container -- first mobile -->
+        <section class="flex justify-center">
+            <!-- Contenedor principal -- formato de tamaño-->
+            <div class="min-w-[200px] w-full max-w-xl mt-40 flex items-center flex-col">
+                <!-- contenedor de logo y texto inicial -->
+                <div class="p-10 bg-coffee-100 rounded-2xl">
 
-                <div class="login_main_form-group">
-                    <div>
-                        <i class="fa-solid fa-lock fa-lg"></i>
-                    </div>
-                    <input class="login_main_form-input" type="password" placeholder="Contraseña">
-                </div>
+                    <div class="flex flex-col items-center">
+                        <div>
+                            <img class="w-40 h-40 rounded-full" src="./src/imgs/logo 1.jpg" alt="Logo de cafdata">
+                        </div>
 
-                <div class="login_main_form-remember">
-                    <div>
-                        <div class="checkbox-container">
-                            <label class="ios-checkbox blue">
-                                <input type="checkbox" />
-                                <div class="checkbox-wrapper">
-                                    <div class="checkbox-bg"></div>
-                                    <svg fill="none" viewBox="0 0 24 24" class="checkbox-icon">
-                                        <path stroke-linejoin="round" stroke-linecap="round" stroke-width="3"
-                                            stroke="currentColor" d="M4 12L10 18L20 6" class="check-path"></path>
-                                    </svg>
-                                </div>
-                                <span class="checkbox-text">Recuérdame</span>
-                            </label>
+                        <div class="text-center mt-5">
+                            <h1 class="h3-mobile lg:h3-desktop font-medium text-coffee-300">Portal de Empleados</h1>
+                            <p class="sec-p-mobile lg:sec-p-desktop text-coffee-300">Accede al sistema con tus
+                                credenciales</p>
                         </div>
                     </div>
+                    <!-- formulario de envio -->
+                    <form class="mt-10" action="">
+                        <!-- contenedor de campos a llenar  -->
+                        <div class="relative min-w-[300px] w-full max-w-xl mb-5">
+                            <div class="absolute inset-y-0 start-0  flex items-center ps-3 pointer-events-none">
+                                <svg class="w-4 h-4 text-body text-coffee-100" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                    viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-width="2"
+                                        d="m3.5 5.5 7.893 6.036a1 1 0 0 0 1.214 0L20.5 5.5M4 19h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z" />
+                                </svg>
+                            </div>
+                            <input type="text" id="input-group-1" class="block w-full ps-9 pe-3 py-2.5 bg-neutral-secondary-medium border border-default-medium text-heading sec-p-mobile rounded-2xl px-3 bg-coffee-500 text-coffee-100
+                                 transition duration-300 ease-in-out
+                                 focus:scale-105 focus:shadow-[0_0_10px_#a3a3a3] focus:outline-none"
+                                placeholder="correo@corre.com">
+                        </div>
+                        <div class="relative min-w-[300px] w-full max-w-xl">
+                            <div class="absolute inset-y-0 start-0  flex items-center ps-3 pointer-events-none">
+                                <i class="fa-solid fa-key text-coffee-100"></i>
+                            </div>
+                            <input type="password" id="input-group-1" class="block w-full ps-9 pe-3 py-2.5 bg-neutral-secondary-medium border border-default-medium text-heading sec-p-mobile rounded-2xl px-3 bg-coffee-500 text-white
+                                 transition duration-300 ease-in-out
+                                 focus:scale-105 focus:shadow-[0_0_10px_#a3a3a3] focus:outline-none"
+                                placeholder="Contraseña">
+                        </div>
+
+                        <!-- contenedor del link y del checkbox -->
+                        <div class="mt-8 flex justify-between items-center">
+                            <div class="flex items-center">
+                                <input id="default-checkbox" type="checkbox" value=""
+                                    class="w-4 h-4 border border-default-medium rounded-xs text-coffee-500 ">
+                                <label for="default-checkbox"
+                                    class="select-none ms-2 text-sm font-medium text-heading text-coffee-300 hover:text-coffee-200 cursor-pointer">Recuerdame</label>
+                            </div>
+                            <a class="" href="">¿Olvidaste tu contraseña?</a>
+                        </div>
+
+                        <div class="mt-5 p-3 bg-coffee-400 text-center text-coffee-200 rounded-2xl cursor-pointer
+                             hover:bg-coffee-300 hover:scale-105 transition duration-200 ease-in-out">
+                            <button>Acceder al sistema</button>
+                        </div>
+                    </form>
+
+                    <!-- footer -->
+                    <footer class="mt-10 w-full flex justify-center">
+                        <div class="min-w-[200px] w-full max-w-[300px] text-center bg-coffee-200 p-4 rounded-2xl">
+                            <p>¿Problemas para acceder? <a class="underline" href="">contacta al administrador</a></p>
+                        </div>
+                    </footer>
+
                 </div>
-
-                <button class="login_main_form-btn" type="submit">Acceder al sistema</button>
-            </form>
-
-            <div class="login_main_error">
-                <p>¿Problemas para acceder? <a href="">Contacta al administrador</a></p>
             </div>
-            
-            <div class="login_main_message">
-                <p>Sistema exclusivo para personal autorizado</p>
-            </div>
-        </div>
-        <!-- contenedor secunario -->
-        <div>
-
-        </div>
+        </section>
     </main>
+
+
 </body>
 
 </html>
