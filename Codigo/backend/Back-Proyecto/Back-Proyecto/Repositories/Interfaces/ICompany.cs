@@ -10,4 +10,5 @@ namespace Back_Proyecto.Repositories.Interfaces
         Task<Company> UpdateCompany(Company company);
         Task<bool> InactiveCompany(Guid id);
     }
+
 }

@@ -9,11 +9,11 @@ namespace Back_Proyecto.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        private readonly IUsersRepository _usersRepository;
+        private readonly IUsersRepository usersRepository;
 
         public UsersController(IUsersRepository usersRepository)
         {
-            _usersRepository = usersRepository;
+            usersRepository = usersRepository;
         }
 
         // =============================
@@ -27,7 +27,7 @@ namespace Back_Proyecto.Controllers
         {
             try
             {
-                var users = await _usersRepository.GetUsers();
+                var users = await usersRepository.GetUsers();
 
                 if (users == null || !users.Any())
                 {
@@ -53,7 +53,7 @@ namespace Back_Proyecto.Controllers
         {
             try
             {
-                var user = await _usersRepository.GetUserById(id);
+                var user = await usersRepository.GetUserById(id);
 
                 if (user == null)
                 {
@@ -79,14 +79,14 @@ namespace Back_Proyecto.Controllers
         {
             try
             {
-                var newUser = await _usersRepository.CreateUser(user);
+                var newUser = await usersRepository.CreateUser(user);
 
-                if (newUser == null) 
+                if (newUser == null)
                 {
                     return BadRequest("No se pudo insertar el usuario.");
                 }
 
-                return Ok(newUser); 
+                return Ok(newUser);
             }
             catch (Exception ex)
             {
@@ -105,7 +105,7 @@ namespace Back_Proyecto.Controllers
         {
             try
             {
-                var result = await _usersRepository.UpdateUser(user);
+                var result = await usersRepository.UpdateUser(user);
 
                 if (result == null)
                 {
@@ -131,7 +131,7 @@ namespace Back_Proyecto.Controllers
         {
             try
             {
-                var result = await _usersRepository.DeleteUser(id);
+                var result = await usersRepository.DeleteUser(id);
 
                 if (!result)
                 {

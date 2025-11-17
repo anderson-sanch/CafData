@@ -2,7 +2,7 @@
 
 namespace Back_Proyecto.Repositories.Interfaces
 {
-    public interface IDiscounts_Products
+    public interface IDiscountsProducts
     {
         Task<List<Disocunts_Products>> GetDiscountsProducts();
         Task<Disocunts_Products> GetDiscountProduct_Id(Guid productId, Guid discountId);
@@ -10,4 +10,5 @@ namespace Back_Proyecto.Repositories.Interfaces
         Task<Disocunts_Products> UpdateDiscountProduct(Disocunts_Products dp);
         Task<bool> DeleteDiscountProduct(Guid productId, Guid discountId);
     }
+
 }
