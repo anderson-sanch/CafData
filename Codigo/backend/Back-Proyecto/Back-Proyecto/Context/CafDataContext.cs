@@ -1,8 +1,6 @@
 ﻿using System;
 using Back_Proyecto.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
-
 
 namespace Back_Proyecto.Context
 {
@@ -16,55 +14,129 @@ namespace Back_Proyecto.Context
         public DbSet<Roles> Roles { get; set; }
         public DbSet<Permissions> Permissions { get; set; }
         public DbSet<Roles_Permissions> Roles_Permissions { get; set; }
+        public DbSet<User_Sessions> User_Sessions { get; set; }
+        public DbSet<Catogories> Catogories { get; set; }
+        public DbSet<Coupons> Coupons { get; set; }
+        public DbSet<Company> Company { get; set; }
+        public DbSet<Disocunts_Products> Discounts_Products { get; set; }
+        public DbSet<Global_Discounts> Global_Discounts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            // USERS
             modelBuilder.Entity<Users>(entity =>
             {
-
-
                 entity.Property(e => e.User_Id).HasDefaultValueSql("NEWID()");
-                entity.Property(e => e.Name).IsRequired().HasMaxLength(50).HasColumnName("Name");
-                entity.Property(e => e.Username).IsRequired().HasMaxLength(15).HasColumnName("Username");
-                entity.Property(e => e.Password).IsRequired().HasMaxLength(50).HasColumnName("Password");
-                entity.Property(e => e.Rol_Id).IsRequired().HasColumnName("Rol_Id");
-                entity.Property(e => e.Status).IsRequired().HasMaxLength(15).HasColumnName("Status");
-                entity.Property(e => e.Creation_Date).IsRequired().HasColumnName("Creation_Date").HasDefaultValueSql("GETDATE()");
+                entity.Property(e => e.Name).IsRequired().HasMaxLength(50);
+                entity.Property(e => e.Username).IsRequired().HasMaxLength(15);
+                entity.Property(e => e.Password).IsRequired().HasMaxLength(50);
+                entity.Property(e => e.Rol_Id).IsRequired();
+                entity.Property(e => e.Status).IsRequired().HasMaxLength(15);
+                entity.Property(e => e.Creation_Date).IsRequired().HasDefaultValueSql("GETDATE()");
 
-                entity.HasOne(u => u.Rol).WithMany(r => r.Users).HasForeignKey(u => u.Rol_Id).OnDelete(DeleteBehavior.Restrict);
+                entity.HasOne(u => u.Rol)
+                      .WithMany(r => r.Users)
+                      .HasForeignKey(u => u.Rol_Id)
+                      .OnDelete(DeleteBehavior.Restrict);
             });
 
+            // ROLES
             modelBuilder.Entity<Roles>(entity =>
             {
                 entity.HasKey(e => e.Rol_Id);
-                entity.Property(e => e.Name).IsRequired().HasMaxLength(50).HasColumnName("Name");
-                entity.Property(e => e.Description).IsRequired().HasMaxLength(100).HasColumnName("Description");
+                entity.Property(e => e.Name).IsRequired().HasMaxLength(50);
+                entity.Property(e => e.Description).IsRequired().HasMaxLength(100);
             });
 
+            // PERMISSIONS
             modelBuilder.Entity<Permissions>(entity =>
             {
                 entity.HasKey(e => e.Permission_Id);
-                entity.Property(e => e.Name).IsRequired().HasMaxLength(50).HasColumnName("Name");
-                entity.Property(e => e.Description).IsRequired().HasMaxLength(100).HasColumnName("Description");
+                entity.Property(e => e.Name).IsRequired().HasMaxLength(50);
+                entity.Property(e => e.Description).IsRequired().HasMaxLength(100);
             });
 
+            // USER SESSIONS
             modelBuilder.Entity<User_Sessions>(entity =>
             {
                 entity.HasKey(e => e.Id_Session);
-                entity.Property(e => e.User_Id).IsRequired().HasColumnName("User_Id");
-                entity.Property(e => e.Token).IsRequired().HasMaxLength(500).HasColumnName("Token");
-                entity.Property(e => e.Start_Date).IsRequired().HasColumnName("Start_Date");
-                entity.Property(e => e.End_Date).IsRequired().HasColumnName("End_Date");
-                entity.Property(e => e.Status).IsRequired().HasMaxLength(50).HasColumnName("Status");
+                entity.Property(e => e.User_Id).IsRequired();
+                entity.Property(e => e.Token).IsRequired().HasMaxLength(500);
+                entity.Property(e => e.Start_Date).IsRequired();
+                entity.Property(e => e.End_Date).IsRequired();
+                entity.Property(e => e.Status).IsRequired().HasMaxLength(50);
 
-                entity.HasOne(s => s.User).WithMany(u => u.Sessions).HasForeignKey(s => s.User_Id).OnDelete(DeleteBehavior.Cascade);
+                entity.HasOne(s => s.User)
+                      .WithMany(u => u.Sessions)
+                      .HasForeignKey(s => s.User_Id)
+                      .OnDelete(DeleteBehavior.Cascade);
             });
 
+            // ROLES PERMISSIONS (Many to Many)
             modelBuilder.Entity<Roles_Permissions>(entity =>
             {
                 entity.HasKey(rp => new { rp.Role_Id, rp.Permission_Id });
-                entity.HasOne(rp => rp.Role).WithMany(r => r.Roles_Permissions).HasForeignKey(rp => rp.Role_Id);
-                entity.HasOne(rp => rp.Permission).WithMany(p => p.Roles_Permissions).HasForeignKey(rp => rp.Permission_Id);
+
+                entity.HasOne(rp => rp.Role)
+                      .WithMany(r => r.Roles_Permissions)
+                      .HasForeignKey(rp => rp.Role_Id);
+
+                entity.HasOne(rp => rp.Permission)
+                      .WithMany(p => p.Roles_Permissions)
+                      .HasForeignKey(rp => rp.Permission_Id);
+            });
+
+            // CATEGORIES
+            modelBuilder.Entity<Catogories>(entity =>
+            {
+                entity.HasKey(e => e.Category_Id);
+                entity.Property(e => e.Name).IsRequired().HasMaxLength(100);
+                entity.Property(e => e.Description).IsRequired().HasMaxLength(250);
+                entity.Property(e => e.status).IsRequired();
+            });
+
+            // COUPONS
+            modelBuilder.Entity<Coupons>(entity =>
+            {
+                entity.HasKey(e => e.Coupon_Id);
+                entity.Property(e => e.Coupons_Code).IsRequired().HasMaxLength(50);
+                entity.Property(e => e.Type).IsRequired().HasMaxLength(50);
+                entity.Property(e => e.Value).IsRequired();
+                entity.Property(e => e.Start_Date).IsRequired();
+                entity.Property(e => e.End_Date).IsRequired();
+                entity.Property(e => e.Maximmum_Use).IsRequired();
+                entity.Property(e => e.Time_Used).IsRequired();
+                entity.Property(e => e.Status).IsRequired();
+                entity.Property(e => e.Description).IsRequired().HasMaxLength(250);
+            });
+
+            // COMPANY
+            modelBuilder.Entity<Company>(entity =>
+            {
+                entity.HasKey(e => e.Company_Id);
+                entity.Property(e => e.Name).IsRequired().HasMaxLength(100);
+                entity.Property(e => e.Address).IsRequired().HasMaxLength(250);
+                entity.Property(e => e.Phone_Number).IsRequired().HasMaxLength(20).HasColumnName("Phone");
+                entity.Property(e => e.Email).IsRequired().HasMaxLength(100);
+            });
+
+            // DISCOUNTS PRODUCTS
+            modelBuilder.Entity<Disocunts_Products>(entity =>
+            {
+                entity.HasKey(e => e.Product_Id);
+                entity.HasKey(e => e.Global_Id);
+            });
+
+            // GLOBAL DISCOUNTS
+            modelBuilder.Entity<Global_Discounts>(entity =>
+            {
+                entity.HasKey(e => e.Global_Id);
+                entity.Property(e => e.Name).IsRequired().HasMaxLength(20). HasColumnName ("Name");
+                entity.Property(e => e.Type).IsRequired().HasMaxLength(20). HasColumnName ("Type");
+                entity.Property(e => e.Value).IsRequired().HasColumnName("Value");
+                entity.Property(e => e.Start_Date).IsRequired().HasColumnName("Start_Date");
+                entity.Property(e => e.End_Date).IsRequired().HasColumnName("End_Date");
+                entity.Property(e => e.Status).IsRequired().HasColumnName("Status");
             });
         }
     }
