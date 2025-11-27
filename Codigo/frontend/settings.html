@@ -1,52 +1,80 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Configuración</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./src/librerias/bootstrap/css/style.css">
-  <style> .menu a[href="configuracion.html"]{background:var(--coffee-700);color:#fff;} </style>
+  <title>CafData</title>
+  <link rel="stylesheet" href="./src/css/output.css">
+  <link rel="stylesheet" href="./src/css/all.min.css">
+  <link rel="shortcut icon" href="./src/imgs/favicon.png" type="image/x-icon">
 </head>
-<body>
-  <aside class="sidebar">
-    <div class="brand"><div class="brand__name">SVGITC</div></div>
-    <nav class="menu">
-      <a class="menu__item" href="index.html"><span>Dashboard</span></a>
-      <a class="menu__item" href="inventario.html"><span>Inventario</span></a>
-      <a class="menu__item" href="ventas.html"><span>Ventas</span></a>
-      <a class="menu__item" href="clientes.html"><span>Clientes</span></a>
-      <a class="menu__item" href="reportes.html"><span>Reportes</span></a>
-      <a class="menu__item" href="personal.html"><span>Personal</span></a>
-      <a class="menu__item" href="notificaciones.html"><span>Notificaciones</span></a>
-      <a class="menu__item" href="configuracion.html"><span>Configuración</span></a>
+
+<body class="grid grid-cols-[280px_1fr] h-screen m-0 text-text-900 bg-cream-50">
+
+  <aside class="bg-coffee-900 text-white p-6 px-4 flex flex-col gap-6">
+    <div class="flex items-center gap-3"><div class="font-bold tracking-wide">CafData</div></div>
+
+    <nav class="grid gap-1.5">
+      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="index.html"><span>Dashboard</span></a>
+      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="inventory.html"><span>Inventario</span></a>
+      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="sales.html"><span>Ventas</span></a>
+      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="clients.html"><span>Clientes</span></a>
+      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="reports.html"><span>Reportes</span></a>
+      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="personal.html"><span>Personal</span></a>
+      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="notifications.html"><span>Notificaciones</span></a>
+      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white bg-coffee-700 text-white" href="settings.html"><span>Configuración</span></a>
     </nav>
+
   </aside>
-  <main class="content">
-    <header class="topbar"><h1 class="topbar__title">Configuración General</h1></header>
+  <main class="bg-cream-50 p-7 px-8 overflow-y-auto">
+    <header class="flex items-center justify-between mb-5"><h1 class="m-0 text-xl">Configuración General</h1></header>
 
-    <form class="form">
-      <div class="form__grid">
-        <div class="field"><label class="label">Nombre de la empresa</label><input class="input" placeholder="Cafetería SVGITC" /></div>
-        <div class="field"><label class="label">NIT</label><input class="input" placeholder="123456789" /></div>
-        <div class="field"><label class="label">Dirección</label><input class="input" placeholder="Calle 123" /></div>
-
-        <div class="field"><label class="label">Teléfono</label><input class="input" placeholder="300 000 0000" /></div>
-        <div class="field"><label class="label">Correo</label><input class="input" placeholder="admin@svgitc.com" /></div>
-        <div class="field"><label class="label">Zona horaria</label><input class="input" placeholder="GMT-5" /></div>
-
-        <div class="field"><label class="label">Idioma</label><input class="input" placeholder="Español" /></div>
-        <div class="field"><label class="label">Formato de fecha</label><input class="input" placeholder="DD/MM/AAAA" /></div>
-        <div class="field"><label class="label">Tipo de negocio</label><input class="input" placeholder="Cafetería" /></div>
+    <form class="bg-white rounded-lg p-[18px] grid gap-[18px]">
+      <div class="grid grid-cols-3 gap-3.5">
+        <div class="grid gap-1.5">
+          <label class="text-xs text-text-700">Nombre de la empresa</label>
+          <input class="h-9 border border-[#e7d9d2] rounded-[10px] px-2.5 bg-cream-50" placeholder="Cafetería SVGITC" />
+        </div>
+        <div class="grid gap-1.5">
+          <label class="text-xs text-text-700">NIT</label>
+          <input class="h-9 border border-[#e7d9d2] rounded-[10px] px-2.5 bg-cream-50" placeholder="123456789" />
+        </div>
+        <div class="grid gap-1.5">
+          <label class="text-xs text-text-700">Dirección</label>
+          <input class="h-9 border border-[#e7d9d2] rounded-[10px] px-2.5 bg-cream-50" placeholder="Calle 123" />
+        </div>
+        <div class="grid gap-1.5">
+          <label class="text-xs text-text-700">Teléfono</label>
+          <input class="h-9 border border-[#e7d9d2] rounded-[10px] px-2.5 bg-cream-50" placeholder="300 000 0000" />
+        </div>
+        <div class="grid gap-1.5">
+          <label class="text-xs text-text-700">Correo</label>
+          <input class="h-9 border border-[#e7d9d2] rounded-[10px] px-2.5 bg-cream-50" placeholder="admin@svgitc.com" />
+        </div>
+        <div class="grid gap-1.5">
+          <label class="text-xs text-text-700">Zona horaria</label>
+          <input class="h-9 border border-[#e7d9d2] rounded-[10px] px-2.5 bg-cream-50" placeholder="GMT-5" />
+        </div>
+        <div class="grid gap-1.5">
+          <label class="text-xs text-text-700">Idioma</label>
+          <input class="h-9 border border-[#e7d9d2] rounded-[10px] px-2.5 bg-cream-50" placeholder="Español" />
+        </div>
+        <div class="grid gap-1.5">
+          <label class="text-xs text-text-700">Formato de fecha</label>
+          <input class="h-9 border border-[#e7d9d2] rounded-[10px] px-2.5 bg-cream-50" placeholder="DD/MM/AAAA" />
+        </div>
+        <div class="grid gap-1.5">
+          <label class="text-xs text-text-700">Tipo de negocio</label>
+          <input class="h-9 border border-[#e7d9d2] rounded-[10px] px-2.5 bg-cream-50" placeholder="Cafetería" />
+        </div>
       </div>
-      <div style="display:flex; gap:10px; justify-content:flex-end;">
-        <button class="btn" type="button">Guardar</button>
-        <button class="btn btn--ghost" type="button">Cancelar</button>
+      <div class="flex gap-2.5 justify-end">
+        <button class="h-[38px] border-0 bg-coffee-700 text-white rounded-[10px] px-3.5 font-semibold" type="button">Guardar</button>
+        <button class="h-[38px] border border-coffee-700 bg-transparent text-coffee-700 rounded-[10px] px-3.5 font-semibold" type="button">Cancelar</button>
       </div>
     </form>
   </main>
 </body>
-</html>
 
+</html>
