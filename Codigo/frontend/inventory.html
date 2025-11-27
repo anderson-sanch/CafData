@@ -1,56 +1,72 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Inventario</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./src/librerias/bootstrap/css/style.css">
-  <style> .menu a[href="inventario.html"]{background:var(--coffee-700);color:#fff;} </style>
+  <link rel="stylesheet" href="./src/css/output.css">
+  <link rel="stylesheet" href="./src/css/all.min.css">
+  <link rel="shortcut icon" href="./src/imgs/favicon.png" type="image/x-icon">
+  <title>CafData</title>
 </head>
-<body>
-  <aside class="sidebar">
-    <div class="brand"><div class="brand__name">SVGITC</div></div>
-    <nav class="menu">
-      <a class="menu__item" href="index.html"><span>Dashboard</span></a>
-      <a class="menu__item" href="inventario.html"><span>Inventario</span></a>
-      <a class="menu__item" href="ventas.html"><span>Ventas</span></a>
-      <a class="menu__item" href="clientes.html"><span>Clientes</span></a>
-      <a class="menu__item" href="reportes.html"><span>Reportes</span></a>
-      <a class="menu__item" href="personal.html"><span>Personal</span></a>
-      <a class="menu__item" href="notificaciones.html"><span>Notificaciones</span></a>
-      <a class="menu__item" href="configuracion.html"><span>Configuración</span></a>
+
+<body class="grid grid-cols-[280px_1fr] h-screen m-0 text-text-900 bg-cream-50">
+
+  <aside class="bg-coffee-900 text-white p-6 px-4 flex flex-col gap-6">
+    <div class="flex items-center gap-3"><div class="font-bold tracking-wide">CafData</div></div>
+    <nav class="grid gap-1.5">
+      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="index.html"><span>Dashboard</span></a>
+      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white bg-coffee-700 text-white" href="inventory.html"><span>Inventario</span></a>
+      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="sales.html"><span>Ventas</span></a>
+      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="clients.html"><span>Clientes</span></a>
+      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="reports.html"><span>Reportes</span></a>
+      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="personal.html"><span>Personal</span></a>
+      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="notifications.html"><span>Notificaciones</span></a>
+      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="settings.html"><span>Configuración</span></a>
     </nav>
   </aside>
-  <main class="content">
-    <header class="topbar"><h1 class="topbar__title">Inventario</h1></header>
+  <main class="bg-cream-50 p-7 px-8 overflow-y-auto">
+    <header class="flex items-center justify-between mb-5"><h1 class="m-0 text-xl">Inventario</h1></header>
 
-    <div class="toolbar">
-      <input class="search" placeholder="Buscar productos, clientes..." />
-      <button class="btn btn--ghost">Filtrar</button>
-      <button class="btn btn--ghost">Exportar</button>
+    <div class="flex gap-2 items-center mb-3.5">
+      <input class="bg-white border border-[#e7d9d2] h-9 rounded-[10px] px-3 w-full max-w-80" placeholder="Buscar productos, clientes..." />
+      <button class="h-[38px] border border-coffee-700 bg-transparent text-coffee-700 rounded-[10px] px-3.5 font-semibold">Filtrar</button>
+      <button class="h-[38px] border border-coffee-700 bg-transparent text-coffee-700 rounded-[10px] px-3.5 font-semibold">Exportar</button>
     </div>
 
-    <section class="kpis">
-      <article class="kpi"><div class="kpi__icon"></div><div><h3 class="kpi__title">Ítems en stock</h3><p class="kpi__value">173,000</p><span class="chip chip--success">+5%</span></div></article>
-      <article class="kpi"><div class="kpi__icon"></div><div><h3 class="kpi__title">Nuevos prod.</h3><p class="kpi__value">5</p><span class="chip chip--success">Agregados</span></div></article>
-      <article class="kpi"><div class="kpi__icon"></div><div><h3 class="kpi__title">Bajo stock</h3><p class="kpi__value">3</p><span class="chip chip--danger">Atención</span></div></article>
+    <section class="grid grid-cols-3 gap-4 mb-4">
+      <article class="bg-white rounded-lg p-4 grid grid-cols-[56px_1fr] gap-3">
+        <div class="w-14 h-14 rounded-xl bg-coffee-200"></div>
+        <div><h3 class="m-0 mb-1.5 text-sm text-text-700">Ítems en stock</h3><p class="m-0 font-bold">173,000</p><span class="inline-block py-1 px-2 rounded-full text-xs bg-[#e6f6ee] text-success">+5%</span></div>
+      </article>
+      <article class="bg-white rounded-lg p-4 grid grid-cols-[56px_1fr] gap-3">
+        <div class="w-14 h-14 rounded-xl bg-coffee-200"></div>
+        <div><h3 class="m-0 mb-1.5 text-sm text-text-700">Nuevos prod.</h3><p class="m-0 font-bold">5</p><span class="inline-block py-1 px-2 rounded-full text-xs bg-[#e6f6ee] text-success">Agregados</span></div>
+      </article>
+      <article class="bg-white rounded-lg p-4 grid grid-cols-[56px_1fr] gap-3">
+        <div class="w-14 h-14 rounded-xl bg-coffee-200"></div>
+        <div><h3 class="m-0 mb-1.5 text-sm text-text-700">Bajo stock</h3><p class="m-0 font-bold">3</p><span class="inline-block py-1 px-2 rounded-full text-xs bg-[#fdeeee] text-danger">Atención</span></div>
+      </article>
     </section>
 
-    <section class="panel">
-      <div class="panel__header"><h2 class="panel__title">Lista de productos</h2></div>
-      <div class="table">
-        <div class="table__row table__row--head"><div class="table__cell">Producto</div><div class="table__cell">Categoría</div><div class="table__cell">Stock</div><div class="table__cell">Precio</div><div class="table__cell">Estado</div><div class="table__cell">Acciones</div></div>
-        <div class="table__row"><div class="table__cell">Café</div><div class="table__cell">Kg</div><div class="table__cell">15</div><div class="table__cell">$20,000</div><div class="table__cell">Disponible</div><div class="table__cell"><span class="link">Ver detalles</span></div></div>
-        <div class="table__row"><div class="table__cell">Azúcar</div><div class="table__cell">Kg</div><div class="table__cell">10</div><div class="table__cell">$40,000</div><div class="table__cell">Disponible</div><div class="table__cell"><span class="link">Ver detalles</span></div></div>
-        <div class="table__row"><div class="table__cell">Leche</div><div class="table__cell">Lt</div><div class="table__cell">8</div><div class="table__cell">$15,000</div><div class="table__cell">Agotado</div><div class="table__cell"><span class="link">Ver detalles</span></div></div>
+    <section class="bg-white rounded-lg">
+      <div class="p-4 px-[18px] border-b border-[#efe7e2]"><h2 class="m-0 text-base">Lista de productos</h2></div>
+      <div class="w-full grid">
+        <div class="grid grid-cols-6 py-3.5 px-[18px] items-center font-semibold text-text-700 bg-coffee-100 rounded-t-lg">
+          <div class="text-sm">Producto</div><div class="text-sm">Categoría</div><div class="text-sm">Stock</div><div class="text-sm">Precio</div><div class="text-sm">Estado</div><div class="text-sm">Acciones</div>
+        </div>
+        <div class="table__row grid grid-cols-6 py-3.5 px-[18px] items-center">
+          <div class="text-sm">Café</div><div class="text-sm">Kg</div><div class="text-sm">15</div><div class="text-sm">$20,000</div><div class="text-sm">Disponible</div><div class="text-sm"><span class="text-coffee-700 underline cursor-default">Ver detalles</span></div>
+        </div>
+        <div class="table__row grid grid-cols-6 py-3.5 px-[18px] items-center">
+          <div class="text-sm">Azúcar</div><div class="text-sm">Kg</div><div class="text-sm">10</div><div class="text-sm">$40,000</div><div class="text-sm">Disponible</div><div class="text-sm"><span class="text-coffee-700 underline cursor-default">Ver detalles</span></div>
+        </div>
+        <div class="table__row grid grid-cols-6 py-3.5 px-[18px] items-center">
+          <div class="text-sm">Leche</div><div class="text-sm">Lt</div><div class="text-sm">8</div><div class="text-sm">$15,000</div><div class="text-sm">Agotado</div><div class="text-sm"><span class="text-coffee-700 underline cursor-default">Ver detalles</span></div>
+        </div>
       </div>
     </section>
   </main>
 </body>
+
 </html>
-
-
-v
