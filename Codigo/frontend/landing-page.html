@@ -1,44 +1,57 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+  
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cafetería SVGITC - Página informativa</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./src/librerias/bootstrap/css/style.css">
+  <link rel="stylesheet" href="./src/css/output.css">
+  <link rel="stylesheet" href="./src/css/all.min.css">
+  <link rel="shortcut icon" href="./src/imgs/favicon.png" type="image/x-icon">
+  <title>CafData</title>
 </head>
-<body style="grid-template-columns: 1fr;">
-  <main class="content">
-    <header class="hero">
+
+<body class="grid grid-cols-1 h-screen m-0 text-text-900 bg-cream-50">
+
+  <main class="bg-cream-50 p-7 px-8 overflow-y-auto">
+    <header class="bg-white rounded-xl p-6 grid grid-cols-[1.3fr_.7fr] gap-[18px] mb-[18px]">
       <div>
-        <h1 class="hero__title">Tómate un descanso con un café</h1>
+        <h1 class="m-0 text-[28px]">Tómate un descanso con un café</h1>
         <p>Comparte una charla y acompáñalo con el café perfecto.</p>
-        <div style="display:flex; gap:8px; margin-top:10px;">
-          <a href="menu.html" class="btn">Ver menú</a>
-          <a href="login.html" class="btn btn--ghost">Iniciar sesión</a>
+        <div class="flex gap-2 mt-2.5">
+          <a href="menu.html" class="h-[38px] border-0 bg-coffee-700 text-white rounded-[10px] px-3.5 font-semibold inline-flex items-center">Ver menú</a>
+          <a href="login.html" class="h-[38px] border border-coffee-700 bg-transparent text-coffee-700 rounded-[10px] px-3.5 font-semibold inline-flex items-center">Iniciar sesión</a>
         </div>
       </div>
-      <div class="hero__img"></div>
+      <div class="bg-coffee-200 rounded-xl h-[240px]"></div>
     </header>
 
-    <section class="panel" style="padding:18px; margin-bottom:16px;">
-      <h2 style="margin:0 0 10px 0;">Acerca de nuestra cafetería SVGITC</h2>
-      <div class="tiles">
-        <div class="tile"><h3 style="margin:0 0 8px 0;">Visión</h3><p style="margin:0; color:var(--text-700)">Ofrecer un lugar de encuentro con el mejor café de especialidad.</p></div>
-        <div class="tile"><h3 style="margin:0 0 8px 0;">Misión</h3><p style="margin:0; color:var(--text-700)">Servir bebidas y postres de alta calidad con atención cálida.</p></div>
-        <div class="tile"><h3 style="margin:0 0 8px 0;">Oferta</h3><p style="margin:0; color:var(--text-700)">Cafés, bebidas y opciones especiales todos los días.</p></div>
+    <section class="bg-white rounded-lg p-[18px] mb-4">
+      <h2 class="m-0 mb-2.5">Acerca de nuestra cafetería SVGITC</h2>
+      <div class="grid grid-cols-3 gap-4">
+        <div class="bg-white rounded-xl p-4 text-center">
+          <h3 class="m-0 mb-2">Visión</h3>
+          <p class="m-0 text-text-700">Ofrecer un lugar de encuentro con el mejor café de especialidad.</p>
+        </div>
+        <div class="bg-white rounded-xl p-4 text-center">
+          <h3 class="m-0 mb-2">Misión</h3>
+          <p class="m-0 text-text-700">Servir bebidas y postres de alta calidad con atención cálida.</p>
+        </div>
+        <div class="bg-white rounded-xl p-4 text-center">
+          <h3 class="m-0 mb-2">Oferta</h3>
+          <p class="m-0 text-text-700">Cafés, bebidas y opciones especiales todos los días.</p>
+        </div>
       </div>
     </section>
 
-    <section class="tiles">
-      <a class="tile" href="menu.html"><strong>Comida</strong></a>
-      <a class="tile" href="menu.html"><strong>Bebidas</strong></a>
-      <a class="tile" href="menu.html"><strong>Oferta especial</strong></a>
+    <section class="grid grid-cols-3 gap-4">
+      <a class="bg-white rounded-xl p-4 text-center" href="menu.html"><strong>Comida</strong></a>
+      <a class="bg-white rounded-xl p-4 text-center" href="menu.html"><strong>Bebidas</strong></a>
+      <a class="bg-white rounded-xl p-4 text-center" href="menu.html"><strong>Oferta especial</strong></a>
     </section>
   </main>
 </body>
+
 </html>
+
 
 
