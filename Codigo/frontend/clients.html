@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clientes</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css" />
-  <style>body { font-family: 'Inter', system-ui, -apple-system, sans-serif; } .table__row:nth-child(even) { background-color: #f7f1ee; }</style>
-</head>
+  <title>CafdData</title>
+  <link rel="stylesheet" href="./src/css/output.css">
+  <link rel="stylesheet" href="./src/css/all.min.css">
+  <link rel="shortcut icon" href="./src/imgs/favicon.png" type="image/x-icon">
+  </head>
+
 <body class="grid grid-cols-[280px_1fr] h-screen m-0 text-text-900 bg-cream-50">
   <aside class="bg-coffee-900 text-white p-6 px-4 flex flex-col gap-6">
-    <div class="flex items-center gap-3"><div class="font-bold tracking-wide">SVGITC</div></div>
+    <div class="flex items-center gap-3"><div class="font-bold tracking-wide">CafData</div></div>
     <nav class="grid gap-1.5">
       <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="index.html"><span>Dashboard</span></a>
       <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="inventario.html"><span>Inventario</span></a>
@@ -24,6 +24,7 @@
       <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="configuracion.html"><span>Configuración</span></a>
     </nav>
   </aside>
+
   <main class="bg-cream-50 p-7 px-8 overflow-y-auto">
     <header class="flex items-center justify-between mb-5"><h1 class="m-0 text-xl">Clientes</h1></header>
 
@@ -61,4 +62,5 @@
     </section>
   </main>
 </body>
+
 </html>
