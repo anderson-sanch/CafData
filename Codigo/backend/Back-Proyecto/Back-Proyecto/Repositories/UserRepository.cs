@@ -24,6 +24,7 @@ namespace Back_Proyecto.Repositories
         {
 
             var User = await _context.Users.FindAsync(id);
+
             if (User == null)
             {
                 throw new Exception("Usuario no encontrado");
@@ -67,6 +68,7 @@ namespace Back_Proyecto.Repositories
             try
             {
                 var ExistingUser = await _context.Users.FindAsync(user.User_Id);
+
                 if (ExistingUser == null)
                 {
                     return null;

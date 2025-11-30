@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Back_Proyecto.Models
@@ -7,10 +8,15 @@ namespace Back_Proyecto.Models
 
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Permission_Id { get; set; }
+        [Required]
+        [MaxLength(50)]
         public string Name { get; set; } = string.Empty; // Permission name
+        [Required]
+        [MaxLength(50)]
         public string Description { get; set; } = string.Empty; //Description of the permission
 
-        public ICollection<Roles_Permissions> Roles_Permissions { get; set; } = new List<Roles_Permissions>(); // Navigation property for related Roles
+        public ICollection<RolesPermissions> Roles_Permissions { get; set; } = new List<RolesPermissions>(); // Navigation property for related Roles
     }
 }

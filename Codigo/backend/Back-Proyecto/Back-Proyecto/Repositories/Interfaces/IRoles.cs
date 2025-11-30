@@ -9,7 +9,7 @@ namespace Back_Proyecto.Repositories.Interfaces
         Task<Roles> GetRol_Id(Guid id); // Method to get a Rol by its Id
         Task<Roles> CreateRol(Roles Rol); // Method to create a new Roles
         Task<Roles> UpdateRol(Roles Rol); // Method to update an existing Roles
-        Task<bool> InactiveRol(Guid id); // Method to Inactive a Rol by its Id
+        Task<bool> DeleteRole(Guid id); // Method to Inactive a Rol by its Id
 
     }
 }

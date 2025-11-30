@@ -13,13 +13,15 @@ namespace Back_Proyecto.Context
         public DbSet<Users> Users { get; set; }
         public DbSet<Roles> Roles { get; set; }
         public DbSet<Permissions> Permissions { get; set; }
-        public DbSet<Roles_Permissions> Roles_Permissions { get; set; }
+        public DbSet<RolesPermissions> Roles_Permissions { get; set; }
         public DbSet<User_Sessions> User_Sessions { get; set; }
-        public DbSet<Catogories> Catogories { get; set; }
+        public DbSet<Categories> Categories { get; set; }
         public DbSet<Coupons> Coupons { get; set; }
         public DbSet<Company> Company { get; set; }
         public DbSet<Disocunts_Products> Discounts_Products { get; set; }
         public DbSet<Global_Discounts> Global_Discounts { get; set; }
+        public DbSet<Clients>Clients { get; set; }
+        public DbSet<Products> Products { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -31,7 +33,7 @@ namespace Back_Proyecto.Context
                 entity.Property(e => e.Username).IsRequired().HasMaxLength(15);
                 entity.Property(e => e.Password).IsRequired().HasMaxLength(50);
                 entity.Property(e => e.Rol_Id).IsRequired();
-                entity.Property(e => e.Status).IsRequired().HasMaxLength(15);
+                entity.Property(e => e.Status).IsRequired().HasMaxLength(15).HasConversion<int>();
                 entity.Property(e => e.Creation_Date).IsRequired().HasDefaultValueSql("GETDATE()");
 
                 entity.HasOne(u => u.Rol)
@@ -73,7 +75,7 @@ namespace Back_Proyecto.Context
             });
 
             // ROLES PERMISSIONS (Many to Many)
-            modelBuilder.Entity<Roles_Permissions>(entity =>
+            modelBuilder.Entity<RolesPermissions>(entity =>
             {
                 entity.HasKey(rp => new { rp.Role_Id, rp.Permission_Id });
 
@@ -87,7 +89,7 @@ namespace Back_Proyecto.Context
             });
 
             // CATEGORIES
-            modelBuilder.Entity<Catogories>(entity =>
+            modelBuilder.Entity<Categories>(entity =>
             {
                 entity.HasKey(e => e.Category_Id);
                 entity.Property(e => e.Name).IsRequired().HasMaxLength(100);
@@ -138,6 +140,57 @@ namespace Back_Proyecto.Context
                 entity.Property(e => e.End_Date).IsRequired().HasColumnName("End_Date");
                 entity.Property(e => e.Status).IsRequired().HasColumnName("Status");
             });
+
+            modelBuilder.Entity<Clients>(entity =>
+            {
+                entity.HasKey(e => e.Client_Id);
+                entity.Property(e => e.Name).IsRequired().HasMaxLength(100).HasColumnName ("Name");
+                entity.Property(e => e.Email).IsRequired().HasMaxLength(150).HasColumnName("Email");
+                entity.Property(e => e.Phone_Number).IsRequired().HasMaxLength(20).HasColumnName("Phone_Number");
+                entity.Property(e => e.Address).IsRequired().HasMaxLength(200).HasColumnName("Address");
+            });
+
+            modelBuilder.Entity<Products>(entity =>
+            {
+                entity.HasKey(e => e.Product_Id);
+
+                entity.Property(e => e.Name)
+                      .IsRequired()
+                      .HasMaxLength(25)
+                      .HasColumnName("Name");
+
+                entity.Property(e => e.Description)
+                      .IsRequired()
+                      .HasMaxLength(50) // corregido
+                      .HasColumnName("Description");
+
+                entity.Property(e => e.Price)
+                      .IsRequired()
+                      .HasColumnType("decimal(18, 0)")
+                      .HasColumnName("Price"); // corregido
+
+                entity.Property(e => e.Stock)
+                      .IsRequired()
+                      .HasColumnName("Stock");
+
+                entity.Property(e => e.Min_Stock)
+                      .IsRequired()
+                      .HasColumnName("Min_Stock");
+
+                entity.Property(e => e.Category_Id)
+                      .IsRequired()
+                      .HasColumnName("Category_Id");
+
+                entity.Property(e => e.Creation_Date)
+                      .IsRequired()
+                      .HasColumnType("datetime")
+                      .HasColumnName("Creation_Date");
+
+                entity.HasOne(e => e.Categories)
+                      .WithMany(c => c.Products)
+                      .HasForeignKey(e => e.Category_Id);
+            });
+
         }
     }
 }

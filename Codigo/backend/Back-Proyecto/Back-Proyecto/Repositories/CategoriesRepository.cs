@@ -15,36 +15,36 @@ namespace Back_Proyecto.Repositories
             _context = context;
         }
 
-        public async Task<List<Catogories>> GetCategories()
+        public async Task<List<Categories>> GetCategories()
         {
-            return await _context.Catogories.ToListAsync();
+            return await _context.Categories.ToListAsync();
         }
 
-        public async Task<Catogories> GetCategory_Id(Guid id)
+        public async Task<Categories> GetCategory_Id(Guid id)
         {
-            return await _context.Catogories.FirstOrDefaultAsync(x => x.Category_Id == id);
+            return await _context.Categories.FirstOrDefaultAsync(x => x.Category_Id == id);
         }
 
-        public async Task<Catogories> CreateCategory(Catogories category)
+        public async Task<Categories> CreateCategory(Categories category)
         {
-            _context.Catogories.Add(category);
+            _context.Categories.Add(category);
             await _context.SaveChangesAsync();
             return category;
         }
 
-        public async Task<Catogories> UpdateCategory(Catogories category)
+        public async Task<Categories> UpdateCategory(Categories category)
         {
-            _context.Catogories.Update(category);
+            _context.Categories.Update(category);
             await _context.SaveChangesAsync();
             return category;
         }
 
-        public async Task<bool> InactiveCategory(Guid id)
+        public async Task<bool> DeleteCategory(Guid id)
         {
-            var cat = await GetCategory_Id(id);
-            if (cat == null) return false;
+            var category = await _context.Categories.FindAsync(id);
+            if (category == null) return false;
 
-            cat.status = false;
+            _context.Categories.Remove(category);
             await _context.SaveChangesAsync();
             return true;
         }

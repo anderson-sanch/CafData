@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Back_Proyecto.Models.Enums;
 
 namespace Back_Proyecto.Models
 {
@@ -19,7 +20,7 @@ namespace Back_Proyecto.Models
         public Guid Rol_Id { get; set; } // Foreign key to Roles
         public Roles? Rol { get; set; } = null; // Navigation property to Roles
 
-        public int Status { get; set; } // User's status (e.g., Active, Inactive)
+        public UserStatus Status { get; set; } // User's status (e.g., Active, Inactive)
 
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime Creation_Date { get; set; } // Account creation date
