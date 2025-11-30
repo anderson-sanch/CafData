@@ -1,105 +1,106 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SVGITC - Dashboard</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./src/librerias/bootstrap/css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CafData</title>
+  <link rel="stylesheet" href="./src/css/output.css">
+  <link rel="stylesheet" href="./src/css/all.min.css">
+  <link rel="shortcut icon" href="./src/imgs/favicon.png" type="image/x-icon">
+
 </head>
-<body>
-    <aside class="sidebar">
-        <div class="brand">
-            <div class="brand__name">SVGITC</div>
+<body class="grid grid-cols-[280px_1fr] h-screen m-0 text-text-900 bg-cream-50">
+  <aside class="bg-coffee-900 text-white p-6 px-4 flex flex-col gap-6">
+    <div class="flex items-center gap-3">
+      <div class="font-bold tracking-wide">CafData</div>
+    </div>
+    <nav class="grid gap-1.5">
+      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white bg-coffee-700 text-white" href="index.html"><span>Dashboard</span></a>
+      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="inventory.html"><span>Inventario</span></a>
+      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="sales.html"><span>Ventas</span></a>
+      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="clients.html"><span>Clientes</span></a>
+      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="reports.html"><span>Reportes</span></a>
+      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="personal.html"><span>Personal</span></a>
+      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="notifications.html"><span>Notificaciones</span></a>
+      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="settings.html"><span>Configuración</span></a>
+    </nav>
+  </aside>
+
+  <main class="bg-cream-50 p-7 px-8 overflow-y-auto">
+    <header class="flex items-center justify-between mb-5">
+      <h1 class="m-0 text-xl">Dashboard</h1>
+      <div>
+        <span class="bg-coffee-200 text-coffee-900 py-1.5 px-2.5 rounded-full text-xs">admin</span>
+      </div>
+    </header>
+
+    <section class="grid grid-cols-3 gap-4 mb-5.5">
+      <article class="bg-white rounded-lg p-4 grid grid-cols-[56px_1fr] gap-3">
+        <div class="w-14 h-14 rounded-xl bg-coffee-200"></div>
+        <div>
+          <h3 class="m-0 mb-1.5 text-sm text-text-700">Ventas hoy</h3>
+          <p class="m-0 text-xl font-bold">$2,450,000</p>
+          <span class="inline-block py-1 px-2 rounded-full text-xs bg-[#e6f6ee] text-success">+12%</span>
         </div>
-        <nav class="menu">
-            <a class="menu__item menu__item--active" href="index.html"><span>Dashboard</span></a>
-            <a class="menu__item" href="inventory.html"><span>Inventario</span></a>
-            <a class="menu__item" href="sales.html"><span>Ventas</span></a>
-            <a class="menu__item" href="clients.html"><span>Clientes</span></a>
-            <a class="menu__item" href="reports.html"><span>Reportes</span></a>
-            <a class="menu__item" href="personal.html"><span>Personal</span></a>
-            <a class="menu__item" href="notifications.html"><span>Notificaciones</span></a>
-            <a class="menu__item" href="settings.html"><span>Configuración</span></a>
-        </nav>
-    </aside>
+      </article>
+      <article class="bg-white rounded-lg p-4 grid grid-cols-[56px_1fr] gap-3">
+        <div class="w-14 h-14 rounded-xl bg-coffee-200"></div>
+        <div>
+          <h3 class="m-0 mb-1.5 text-sm text-text-700">Ordenes</h3>
+          <p class="m-0 text-xl font-bold">84</p>
+          <span class="inline-block py-1 px-2 rounded-full text-xs bg-[#e6f6ee] text-success">+8%</span>
+        </div>
+      </article>
+      <article class="bg-white rounded-lg p-4 grid-cols-[56px_1fr] gap-3 grid">
+        <div class="w-14 h-14 rounded-xl bg-coffee-200"></div>
+        <div>
+          <h3 class="m-0 mb-1.5 text-sm text-text-700">Productos</h3>
+          <p class="m-0 text-xl font-bold">382</p>
+          <span class="inline-block py-1 px-2 rounded-full text-xs bg-[#fdeeee] text-danger">-3%</span>
+        </div>
+      </article>
+    </section>
 
-    <main class="content">
-        <header class="topbar">
-            <h1 class="topbar__title">Dashboard</h1>
-            <div class="topbar__right">
-                <span class="badge">admin</span>
-            </div>
-        </header>
-
-        <section class="cards">
-            <article class="card">
-                <div class="card__icon"></div>
-                <div class="card__body">
-                    <h3 class="card__title">Ventas hoy</h3>
-                    <p class="card__value">$2,450,000</p>
-                    <span class="chip chip--success">+12%</span>
-                </div>
-            </article>
-            <article class="card">
-                <div class="card__icon"></div>
-                <div class="card__body">
-                    <h3 class="card__title">Ordenes</h3>
-                    <p class="card__value">84</p>
-                    <span class="chip chip--success">+8%</span>
-                </div>
-            </article>
-            <article class="card">
-                <div class="card__icon"></div>
-                <div class="card__body">
-                    <h3 class="card__title">Productos</h3>
-                    <p class="card__value">382</p>
-                    <span class="chip chip--danger">-3%</span>
-                </div>
-            </article>
-        </section>
-
-        <section class="panel">
-            <div class="panel__header">
-                <h2 class="panel__title">Órdenes recientes</h2>
-            </div>
-            <div class="table">
-                <div class="table__row table__row--head">
-                    <div class="table__cell">ID</div>
-                    <div class="table__cell">Cliente</div>
-                    <div class="table__cell">Total</div>
-                    <div class="table__cell">Estado</div>
-                    <div class="table__cell">Fecha</div>
-                    <div class="table__cell">Acciones</div>
-                </div>
-                <div class="table__row">
-                    <div class="table__cell">#001</div>
-                    <div class="table__cell">María González</div>
-                    <div class="table__cell">$45,000</div>
-                    <div class="table__cell"><span class="chip chip--success">Completada</span></div>
-                    <div class="table__cell">12/09/2025</div>
-                    <div class="table__cell"><span class="link">Ver detalles</span></div>
-                </div>
-                <div class="table__row">
-                    <div class="table__cell">#002</div>
-                    <div class="table__cell">Carlos López</div>
-                    <div class="table__cell">$32,000</div>
-                    <div class="table__cell"><span class="chip chip--success">Completada</span></div>
-                    <div class="table__cell">23/04/2024</div>
-                    <div class="table__cell"><span class="link">Ver detalles</span></div>
-                </div>
-                <div class="table__row">
-                    <div class="table__cell">#003</div>
-                    <div class="table__cell">Ana Martínez</div>
-                    <div class="table__cell">$98,000</div>
-                    <div class="table__cell"><span class="chip chip--success">Completada</span></div>
-                    <div class="table__cell">14/05/2025</div>
-                    <div class="table__cell"><span class="link">Ver detalles</span></div>
-                </div>
-            </div>
-        </section>
-    </main>
+    <section class="bg-white rounded-lg">
+      <div class="p-4 px-[18px] border-b border-[#efe7e2]">
+        <h2 class="m-0 text-base">Órdenes recientes</h2>
+      </div>
+      <div class="w-full grid">
+        <div class="grid grid-cols-[110px_1fr_140px_160px_140px_120px] py-3.5 px-[18px] items-center font-semibold text-text-700 bg-coffee-100 rounded-t-lg">
+          <div class="text-sm">ID</div>
+          <div class="text-sm">Cliente</div>
+          <div class="text-sm">Total</div>
+          <div class="text-sm">Estado</div>
+          <div class="text-sm">Fecha</div>
+          <div class="text-sm">Acciones</div>
+        </div>
+        <div class="table__row grid grid-cols-[110px_1fr_140px_160px_140px_120px] py-3.5 px-[18px] items-center">
+          <div class="text-sm">#001</div>
+          <div class="text-sm">María González</div>
+          <div class="text-sm">$45,000</div>
+          <div class="text-sm"><span class="inline-block py-1 px-2 rounded-full text-xs bg-[#e6f6ee] text-success">Completada</span></div>
+          <div class="text-sm">12/09/2025</div>
+          <div class="text-sm"><span class="text-coffee-700 underline cursor-default">Ver detalles</span></div>
+        </div>
+        <div class="table__row grid grid-cols-[110px_1fr_140px_160px_140px_120px] py-3.5 px-[18px] items-center">
+          <div class="text-sm">#002</div>
+          <div class="text-sm">Carlos López</div>
+          <div class="text-sm">$32,000</div>
+          <div class="text-sm"><span class="inline-block py-1 px-2 rounded-full text-xs bg-[#e6f6ee] text-success">Completada</span></div>
+          <div class="text-sm">23/04/2024</div>
+          <div class="text-sm"><span class="text-coffee-700 underline cursor-default">Ver detalles</span></div>
+        </div>
+        <div class="table__row grid grid-cols-[110px_1fr_140px_160px_140px_120px] py-3.5 px-[18px] items-center">
+          <div class="text-sm">#003</div>
+          <div class="text-sm">Ana Martínez</div>
+          <div class="text-sm">$98,000</div>
+          <div class="text-sm"><span class="inline-block py-1 px-2 rounded-full text-xs bg-[#e6f6ee] text-success">Completada</span></div>
+          <div class="text-sm">14/05/2025</div>
+          <div class="text-sm"><span class="text-coffee-700 underline cursor-default">Ver detalles</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
 </body>
+
 </html>

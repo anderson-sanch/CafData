@@ -1,64 +1,64 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Notificaciones</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./src/librerias/bootstrap/css/style.css">
-  <style> .menu a[href="notificaciones.html"]{background:var(--coffee-700);color:#fff;} </style>
+  <link rel="stylesheet" href="./src/css/output.css">
+  <link rel="stylesheet" href="./src/css/all.min.css">
+  <link rel="shortcut icon" href="./src/imgs/favicon.png" type="image/x-icon">
+  <title>CafData</title>
 </head>
-<body>
-  <aside class="sidebar">
-    <div class="brand"><div class="brand__name">SVGITC</div></div>
-    <nav class="menu">
-      <a class="menu__item" href="index.html"><span>Dashboard</span></a>
-      <a class="menu__item" href="inventario.html"><span>Inventario</span></a>
-      <a class="menu__item" href="ventas.html"><span>Ventas</span></a>
-      <a class="menu__item" href="clientes.html"><span>Clientes</span></a>
-      <a class="menu__item" href="reportes.html"><span>Reportes</span></a>
-      <a class="menu__item" href="personal.html"><span>Personal</span></a>
-      <a class="menu__item" href="notificaciones.html"><span>Notificaciones</span></a>
-      <a class="menu__item" href="configuracion.html"><span>Configuración</span></a>
+
+<body class="grid grid-cols-[280px_1fr] h-screen m-0 text-text-900 bg-cream-50">
+
+  <aside class="bg-coffee-900 text-white p-6 px-4 flex flex-col gap-6">
+    <div class="flex items-center gap-3"><div class="font-bold tracking-wide">CafData</div></div>
+    <nav class="grid gap-1.5">
+      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="index.html"><span>Dashboard</span></a>
+      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="inventory.html"><span>Inventario</span></a>
+      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="sales.html"><span>Ventas</span></a>
+      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="clients.html"><span>Clientes</span></a>
+      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="reports.html"><span>Reportes</span></a>
+      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="personal.html"><span>Personal</span></a>
+      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white bg-coffee-700 text-white" href="notifications.html"><span>Notificaciones</span></a>
+      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="settings.html"><span>Configuración</span></a>
     </nav>
   </aside>
-  <main class="content">
-    <header class="topbar"><h1 class="topbar__title">Centro de notificaciones</h1></header>
 
-    <div class="toolbar">
-      <button class="btn btn--ghost">Todos</button>
-      <button class="btn btn--ghost">Sin leer</button>
-      <button class="btn btn--ghost">Críticos</button>
-      <button class="btn btn--ghost">Urgentes</button>
+  <main class="bg-cream-50 p-7 px-8 overflow-y-auto">
+    <header class="flex items-center justify-between mb-5"><h1 class="m-0 text-xl">Centro de notificaciones</h1></header>
+
+    <div class="flex gap-2 items-center mb-3.5">
+      <button class="h-[38px] border border-coffee-700 bg-transparent text-coffee-700 rounded-[10px] px-3.5 font-semibold">Todos</button>
+      <button class="h-[38px] border border-coffee-700 bg-transparent text-coffee-700 rounded-[10px] px-3.5 font-semibold">Sin leer</button>
+      <button class="h-[38px] border border-coffee-700 bg-transparent text-coffee-700 rounded-[10px] px-3.5 font-semibold">Críticos</button>
+      <button class="h-[38px] border border-coffee-700 bg-transparent text-coffee-700 rounded-[10px] px-3.5 font-semibold">Urgentes</button>
     </div>
 
-    <section class="panel" style="padding:0 0 8px 0; overflow:hidden;">
-      <div class="table">
-        <div class="table__row" style="border-left:6px solid var(--danger); background:#fff7f7;">
-          <div class="table__cell" style="grid-column: 1 / -1;">
-            <div style="display:flex; justify-content:space-between; align-items:center;">
-              <div>
-                <strong>Stock crítico - Café Colombia Premium</strong>
-                <div style="color:var(--text-700); font-size:14px">Quedan 2 unidades. Revisa inventario.</div>
-              </div>
-              <div style="display:flex; gap:8px;">
-                <span class="btn btn--ghost">Reabastecer</span>
-                <span class="btn btn--ghost">Ver Producto</span>
-              </div>
+    <section class="bg-white rounded-lg pb-2 overflow-hidden">
+      <div class="w-full grid">
+        <div class="border-l-[6px] border-danger bg-[#fff7f7] py-3.5 px-[18px]">
+          <div class="flex justify-between items-center">
+            <div>
+              <strong>Stock crítico - Café Colombia Premium</strong>
+              <div class="text-text-700 text-sm">Quedan 2 unidades. Revisa inventario.</div>
+            </div>
+            <div class="flex gap-2">
+              <span class="h-[38px] border border-coffee-700 bg-transparent text-coffee-700 rounded-[10px] px-3.5 font-semibold inline-flex items-center">Reabastecer</span>
+              <span class="h-[38px] border border-coffee-700 bg-transparent text-coffee-700 rounded-[10px] px-3.5 font-semibold inline-flex items-center">Ver Producto</span>
             </div>
           </div>
         </div>
-        <div class="table__row" style="border-left:6px solid var(--warning); background:#fffaf1;">
-          <div class="table__cell" style="grid-column: 1 / -1;">
-            <strong>Turno de Personal Próximo a finalzar</strong>
-            <div style="color:var(--text-700); font-size:14px">Equipo vespertino. Preparar relevo.</div>
-          </div>
+
+        <div class="border-l-[6px] border-warning bg-[#fffaf1] py-3.5 px-[18px]">
+          <strong>Turno de Personal Próximo a finalzar</strong>
+          <div class="text-text-700 text-sm">Equipo vespertino. Preparar relevo.</div>
         </div>
+
       </div>
     </section>
   </main>
 </body>
-</html>
 
+</html>

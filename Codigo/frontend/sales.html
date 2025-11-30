@@ -1,71 +1,71 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ventas</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./src/librerias/bootstrap/css/style.css">
-  <style> .menu a[href="ventas.html"]{background:var(--coffee-700);color:#fff;} </style>
+  <link rel="stylesheet" href="./src/css/output.css">
+  <link rel="stylesheet" href="./src/css/all.min.css">
+  <link rel="shortcut icon" href="./src/imgs/favicon.png" type="image/x-icon">
+  <title>CafData</title>
 </head>
-<body>
-  <aside class="sidebar">
-    <div class="brand"><div class="brand__name">SVGITC</div></div>
-    <nav class="menu">
-      <a class="menu__item" href="index.html"><span>Dashboard</span></a>
-      <a class="menu__item" href="inventario.html"><span>Inventario</span></a>
-      <a class="menu__item" href="ventas.html"><span>Ventas</span></a>
-      <a class="menu__item" href="clientes.html"><span>Clientes</span></a>
-      <a class="menu__item" href="reportes.html"><span>Reportes</span></a>
-      <a class="menu__item" href="personal.html"><span>Personal</span></a>
-      <a class="menu__item" href="notificaciones.html"><span>Notificaciones</span></a>
-      <a class="menu__item" href="configuracion.html"><span>Configuración</span></a>
+
+<body class="grid grid-cols-[280px_1fr] h-screen m-0 text-text-900 bg-cream-50">
+  <aside class="bg-coffee-900 text-white p-6 px-4 flex flex-col gap-6">
+    <div class="flex items-center gap-3"><div class="font-bold tracking-wide">CafData</div></div>
+    <nav class="grid gap-1.5">
+      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="index.html"><span>Dashboard</span></a>
+      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="inventory.html"><span>Inventario</span></a>
+      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white bg-coffee-700 text-white" href="sales.html"><span>Ventas</span></a>
+      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="clients.html"><span>Clientes</span></a>
+      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="reports.html"><span>Reportes</span></a>
+      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="personal.html"><span>Personal</span></a>
+      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="notifications.html"><span>Notificaciones</span></a>
+      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="settings.html"><span>Configuración</span></a>
     </nav>
   </aside>
-  <main class="content">
-    <header class="topbar"><h1 class="topbar__title">Módulo de ventas</h1></header>
 
-    <div class="toolbar">
-      <input class="search" placeholder="Buscar productos, clientes..." />
-      <button class="btn btn--ghost">Limpiar</button>
-      <button class="btn btn--ghost">Procesar</button>
+  <main class="bg-cream-50 p-7 px-8 overflow-y-auto">
+    <header class="flex items-center justify-between mb-5"><h1 class="m-0 text-xl">Módulo de ventas</h1></header>
+
+    <div class="flex gap-2 items-center mb-3.5">
+      <input class="bg-white border border-[#e7d9d2] h-9 rounded-[10px] px-3 w-full max-w-80" placeholder="Buscar productos, clientes..." />
+      <button class="h-[38px] border border-coffee-700 bg-transparent text-coffee-700 rounded-[10px] px-3.5 font-semibold">Limpiar</button>
+      <button class="h-[38px] border border-coffee-700 bg-transparent text-coffee-700 rounded-[10px] px-3.5 font-semibold">Procesar</button>
     </div>
 
-    <section class="panel" style="display:grid; grid-template-columns: 1fr 320px; gap: 16px; padding: 16px;">
+    <section class="bg-white rounded-lg grid grid-cols-[1fr_320px] gap-4 p-4">
       <div>
-        <h3 style="margin:0 0 12px 0;">Punto de venta</h3>
-        <div style="display:grid; grid-template-columns: repeat(3, 120px); gap: 12px;">
-          <div class="tile">Capuccino<br><small>$6,000</small></div>
-          <div class="tile">Latte<br><small>$6,500</small></div>
-          <div class="tile">Pastel<br><small>$8,000</small></div>
+        <h3 class="m-0 mb-3">Punto de venta</h3>
+        <div class="grid grid-cols-3 gap-3" style="grid-template-columns: repeat(3, 120px);">
+          <div class="bg-white rounded-xl p-4 text-center">Capuccino<br><small>$6,000</small></div>
+          <div class="bg-white rounded-xl p-4 text-center">Latte<br><small>$6,500</small></div>
+          <div class="bg-white rounded-xl p-4 text-center">Pastel<br><small>$8,000</small></div>
         </div>
       </div>
-      <aside class="form" style="height:fit-content">
-        <h3 style="margin:0 0 8px 0">Carrito de compras</h3>
-        <div class="table" style="gap:8px">
-          <div class="menu-card__item"><span>Café Americano</span><span>$9,000</span></div>
-          <div class="menu-card__item"><span>Capuccino</span><span>$6,000</span></div>
-          <div class="menu-card__item"><span>Pastel</span><span>$8,000</span></div>
+      <aside class="bg-white rounded-lg p-[18px] grid gap-[18px] h-fit">
+        <h3 class="m-0 mb-2">Carrito de compras</h3>
+        <div class="grid gap-2">
+          <div class="flex justify-between text-sm py-1 border-b border-dashed border-[#eadad3]"><span>Café Americano</span><span>$9,000</span></div>
+          <div class="flex justify-between text-sm py-1 border-b border-dashed border-[#eadad3]"><span>Capuccino</span><span>$6,000</span></div>
+          <div class="flex justify-between text-sm py-1 border-b border-dashed border-[#eadad3]"><span>Pastel</span><span>$8,000</span></div>
         </div>
-        <div style="display:grid; gap:6px; font-size:14px; color:var(--text-700); margin-top:6px;">
-          <div style="display:flex; justify-content:space-between"><span>Subtotal</span><span>$18,000</span></div>
-          <div style="display:flex; justify-content:space-between"><span>IVA (9%)</span><span>$1,620</span></div>
-          <div style="display:flex; justify-content:space-between; font-weight:700; color:var(--text-900)"><span>Total</span><span>$19,620</span></div>
+        <div class="grid gap-1.5 text-sm text-text-700 mt-1.5">
+          <div class="flex justify-between"><span>Subtotal</span><span>$18,000</span></div>
+          <div class="flex justify-between"><span>IVA (9%)</span><span>$1,620</span></div>
+          <div class="flex justify-between font-bold text-text-900"><span>Total</span><span>$19,620</span></div>
         </div>
-        <div style="margin-top:10px; display:grid; gap:6px;">
-          <span class="label">Método de Pago</span>
-          <div style="display:grid; gap:6px;">
-            <div class="tile">Efectivo</div>
-            <div class="tile">Tarjeta</div>
-            <div class="tile">Transferencia</div>
+        <div class="mt-2.5 grid gap-1.5">
+          <span class="text-xs text-text-700">Método de Pago</span>
+          <div class="grid gap-1.5">
+            <div class="bg-white rounded-xl p-4 text-center">Efectivo</div>
+            <div class="bg-white rounded-xl p-4 text-center">Tarjeta</div>
+            <div class="bg-white rounded-xl p-4 text-center">Transferencia</div>
           </div>
         </div>
       </aside>
     </section>
   </main>
 </body>
+
 </html>
-
-
