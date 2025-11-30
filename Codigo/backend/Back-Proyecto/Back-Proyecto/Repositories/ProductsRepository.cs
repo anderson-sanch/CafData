@@ -16,29 +16,29 @@ namespace Back_Proyecto.Repositories.Implementations
         {
             _context = context;
         }
-
         public async Task<List<Products>> GetProducts()
         {
             return await _context.Products
-                                 .Include(p => p.Categories)
+                                 .Include(p => p.Category)               // <- singular
+                                 .Include(p => p.DiscountedProducts)    // opcional: cargar descuentos aplicados
                                  .ToListAsync();
         }
 
         public async Task<Products> GetProduct(Guid productId)
         {
             return await _context.Products
-                                 .Include(p => p.Categories)
+                                 .Include(p => p.Category)
+                                 .Include(p => p.DiscountedProducts)
                                  .FirstOrDefaultAsync(p => p.Product_Id == productId);
         }
 
         public async Task<Products> CreateProduct(Products product)
         {
-            if (product == null) throw new ArgumentNullException(nameof(product));
-
             _context.Products.Add(product);
             await _context.SaveChangesAsync();
-            return product; // Product_Id y Creation_Date vienen de la DB
+            return product;
         }
+
 
         public async Task<Products> UpdateProduct(Products product)
         {

@@ -4,11 +4,10 @@ namespace Back_Proyecto.Repositories.Interfaces
 {
     public interface IGlobalDiscounts
     {
-        Task<List<Global_Discounts>> GetGlobalDiscounts(); 
-        Task<Global_Discounts> GetGlobalDiscount_Id(Guid id);
-        Task<Global_Discounts> CreateGlobalDiscount(Global_Discounts discount);
-        Task<Global_Discounts> UpdateGlobalDiscount(Global_Discounts discount);
-        Task<bool> InactiveGlobalDiscount(Guid id);
+        Task<List<GlobalDiscounts>> GetGlobalDiscounts();
+        Task<GlobalDiscounts> GetGlobalDiscount_Id(Guid id);
+        Task<GlobalDiscounts> CreateGlobalDiscount(GlobalDiscounts discount);
+        Task<GlobalDiscounts> UpdateGlobalDiscount(GlobalDiscounts discount);
+        Task<bool> DeleteGlobalDiscount(Guid id);
     }
-
 }

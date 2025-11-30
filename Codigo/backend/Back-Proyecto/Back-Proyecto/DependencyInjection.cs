@@ -22,6 +22,9 @@ namespace Back_Proyecto
             services.AddScoped<IClientsRepository, ClientsRepository>();
             services.AddScoped<ICategories, CategoriesRepository>();
             services.AddScoped<IProducts, ProductsRepository>();
+            services.AddScoped<IDiscounts, DiscountsRepository>();
+            services.AddScoped<IGlobalDiscounts, GlobalDiscountsRepository>();
+            services.AddScoped<IDiscountedProducts, DiscountedProductsRepository>();
 
 
 

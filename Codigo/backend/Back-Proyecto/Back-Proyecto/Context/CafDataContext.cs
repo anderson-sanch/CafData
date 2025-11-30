@@ -18,10 +18,11 @@ namespace Back_Proyecto.Context
         public DbSet<Categories> Categories { get; set; }
         public DbSet<Coupons> Coupons { get; set; }
         public DbSet<Company> Company { get; set; }
-        public DbSet<Disocunts_Products> Discounts_Products { get; set; }
-        public DbSet<Global_Discounts> Global_Discounts { get; set; }
+        public DbSet<DiscountedProducts> DiscountedProducts { get; set; }
+        public DbSet<GlobalDiscounts> Global_Discounts { get; set; }
         public DbSet<Clients>Clients { get; set; }
         public DbSet<Products> Products { get; set; }
+        public DbSet<Discounts> Discounts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -91,10 +92,13 @@ namespace Back_Proyecto.Context
             // CATEGORIES
             modelBuilder.Entity<Categories>(entity =>
             {
+                entity.ToTable("Categories");
+
                 entity.HasKey(e => e.Category_Id);
-                entity.Property(e => e.Name).IsRequired().HasMaxLength(100);
-                entity.Property(e => e.Description).IsRequired().HasMaxLength(250);
-                entity.Property(e => e.status).IsRequired();
+
+                entity.Property(e => e.Name).IsRequired().HasMaxLength(20);
+                entity.Property(e => e.Description).IsRequired().HasMaxLength(50);
+                entity.Property(e => e.Status).IsRequired();
             });
 
             // COUPONS
@@ -122,25 +126,37 @@ namespace Back_Proyecto.Context
                 entity.Property(e => e.Email).IsRequired().HasMaxLength(100);
             });
 
-            // DISCOUNTS PRODUCTS
-            modelBuilder.Entity<Disocunts_Products>(entity =>
-            {
-                entity.HasKey(e => e.Product_Id);
-                entity.HasKey(e => e.Global_Id);
-            });
+            modelBuilder.Entity<DiscountedProducts>()
+                .HasKey(dp => new { dp.Product_Id, dp.Global_Id });
+
+            modelBuilder.Entity<DiscountedProducts>()
+                .HasOne(dp => dp.Product)
+                .WithMany(p => p.DiscountedProducts)
+                .HasForeignKey(dp => dp.Product_Id);
+
+            modelBuilder.Entity<DiscountedProducts>()
+                .HasOne(dp => dp.GlobalDiscount)
+                .WithMany(g => g.DiscountedProducts)
+                .HasForeignKey(dp => dp.Global_Id);
+
+
 
             // GLOBAL DISCOUNTS
-            modelBuilder.Entity<Global_Discounts>(entity =>
+            modelBuilder.Entity<GlobalDiscounts>(entity =>
             {
+                entity.ToTable("Global_Discounts");
+
                 entity.HasKey(e => e.Global_Id);
-                entity.Property(e => e.Name).IsRequired().HasMaxLength(20). HasColumnName ("Name");
-                entity.Property(e => e.Type).IsRequired().HasMaxLength(20). HasColumnName ("Type");
-                entity.Property(e => e.Value).IsRequired().HasColumnName("Value");
-                entity.Property(e => e.Start_Date).IsRequired().HasColumnName("Start_Date");
-                entity.Property(e => e.End_Date).IsRequired().HasColumnName("End_Date");
-                entity.Property(e => e.Status).IsRequired().HasColumnName("Status");
+
+                entity.Property(e => e.Name).IsRequired().HasMaxLength(20);
+                entity.Property(e => e.Type).IsRequired().HasMaxLength(20);
+                entity.Property(e => e.Value).IsRequired();
+                entity.Property(e => e.Start_Date).IsRequired();
+                entity.Property(e => e.End_Date).IsRequired();
+                entity.Property(e => e.Status).IsRequired();
             });
 
+            //CLIENTS
             modelBuilder.Entity<Clients>(entity =>
             {
                 entity.HasKey(e => e.Client_Id);
@@ -149,46 +165,57 @@ namespace Back_Proyecto.Context
                 entity.Property(e => e.Phone_Number).IsRequired().HasMaxLength(20).HasColumnName("Phone_Number");
                 entity.Property(e => e.Address).IsRequired().HasMaxLength(200).HasColumnName("Address");
             });
-
+            // PRODUCTS
             modelBuilder.Entity<Products>(entity =>
             {
+                entity.ToTable("Products");
+
                 entity.HasKey(e => e.Product_Id);
 
-                entity.Property(e => e.Name)
-                      .IsRequired()
-                      .HasMaxLength(25)
-                      .HasColumnName("Name");
+                entity.Property(e => e.Name).IsRequired().HasMaxLength(25);
+                entity.Property(e => e.Description).IsRequired().HasMaxLength(50);
+                entity.Property(e => e.Price).IsRequired().HasColumnType("decimal(18,0)");
+                entity.Property(e => e.Stock).IsRequired();
+                entity.Property(e => e.Min_Stock).IsRequired();
+                entity.Property(e => e.Category_Id).IsRequired();
+                entity.Property(e => e.Creation_Date).IsRequired();
 
-                entity.Property(e => e.Description)
-                      .IsRequired()
-                      .HasMaxLength(50) // corregido
-                      .HasColumnName("Description");
-
-                entity.Property(e => e.Price)
-                      .IsRequired()
-                      .HasColumnType("decimal(18, 0)")
-                      .HasColumnName("Price"); // corregido
-
-                entity.Property(e => e.Stock)
-                      .IsRequired()
-                      .HasColumnName("Stock");
-
-                entity.Property(e => e.Min_Stock)
-                      .IsRequired()
-                      .HasColumnName("Min_Stock");
-
-                entity.Property(e => e.Category_Id)
-                      .IsRequired()
-                      .HasColumnName("Category_Id");
-
-                entity.Property(e => e.Creation_Date)
-                      .IsRequired()
-                      .HasColumnType("datetime")
-                      .HasColumnName("Creation_Date");
-
-                entity.HasOne(e => e.Categories)
+                entity.HasOne(e => e.Category)
                       .WithMany(c => c.Products)
-                      .HasForeignKey(e => e.Category_Id);
+                      .HasForeignKey(e => e.Category_Id)
+                      .OnDelete(DeleteBehavior.Restrict);
+            });
+
+            modelBuilder.Entity<Discounts>(entity =>
+            {
+                entity.HasKey(e => e.Discount_Id);
+                entity.Property(e => e.Product_Id).IsRequired().HasColumnName("Product_Id");
+                entity.Property(e => e.type).IsRequired().HasMaxLength(15).HasColumnName("Type");
+                entity.Property(e => e.Value).IsRequired().HasColumnType("decimal(18, 0)").HasColumnName("Value");
+                entity.Property(e => e.Start_Date).IsRequired().HasColumnType("date").HasColumnName("Start_Date");
+                entity.Property(e => e.End_Date).IsRequired().HasColumnType("date").HasColumnName("End_Date");
+                entity.Property(e => e.Active).IsRequired().HasColumnName("Active");
+                entity.Property(e => e.Description).HasMaxLength(50).HasColumnName("Description");
+
+                entity.HasOne(e => e.Products)
+                      .WithMany(c => c.Discounts)
+                      .HasForeignKey(e => e.Product_Id);
+            });
+
+            // DISCOUNTED PRODUCTS
+            modelBuilder.Entity<DiscountedProducts>(entity =>
+            {
+                entity.ToTable("Discounted_Products");
+
+                entity.HasKey(dp => new { dp.Product_Id, dp.Global_Id });
+
+                entity.HasOne(dp => dp.Product)
+                      .WithMany(p => p.DiscountedProducts)
+                      .HasForeignKey(dp => dp.Product_Id);
+
+                entity.HasOne(dp => dp.GlobalDiscount)
+                      .WithMany(g => g.DiscountedProducts)
+                      .HasForeignKey(dp => dp.Global_Id);
             });
 
         }
