@@ -4,68 +4,192 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CafData</title>
   <link rel="stylesheet" href="./src/css/output.css">
   <link rel="stylesheet" href="./src/css/all.min.css">
   <link rel="shortcut icon" href="./src/imgs/favicon.png" type="image/x-icon">
-  <title>CafData</title>
 </head>
 
-<body class="grid grid-cols-[280px_1fr] h-screen m-0 text-text-900 bg-cream-50">
+<body class="grid grid-cols-[280px_1fr] h-screen m-0 bg-coffee-cream">
 
-  <aside class="bg-coffee-900 text-white p-6 px-4 flex flex-col gap-6">
-    <div class="flex items-center gap-3"><div class="font-bold tracking-wide">CafData</div></div>
-    <nav class="grid gap-1.5">
-      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="index.html"><span>Dashboard</span></a>
-      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white bg-coffee-700 text-white" href="inventory.html"><span>Inventario</span></a>
-      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="sales.html"><span>Ventas</span></a>
-      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="clients.html"><span>Clientes</span></a>
-      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="reports.html"><span>Reportes</span></a>
-      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="personal.html"><span>Personal</span></a>
-      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="notifications.html"><span>Notificaciones</span></a>
-      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="settings.html"><span>Configuración</span></a>
-    </nav>
-  </aside>
-  <main class="bg-cream-50 p-7 px-8 overflow-y-auto">
-    <header class="flex items-center justify-between mb-5"><h1 class="m-0 text-xl">Inventario</h1></header>
+  <!-- SIDEBAR -->
+  <aside class="bg-coffee-500 text-coffee-cream p-5 flex flex-col gap-6 w-[280px]">
 
-    <div class="flex gap-2 items-center mb-3.5">
-      <input class="bg-white border border-[#e7d9d2] h-9 rounded-[10px] px-3 w-full max-w-80" placeholder="Buscar productos, clientes..." />
-      <button class="h-[38px] border border-coffee-700 bg-transparent text-coffee-700 rounded-[10px] px-3.5 font-semibold">Filtrar</button>
-      <button class="h-[38px] border border-coffee-700 bg-transparent text-coffee-700 rounded-[10px] px-3.5 font-semibold">Exportar</button>
+    <!-- LOGO + TEXTO -->
+    <div class="flex items-center gap-3 mb-4">
+      <img src="./src/imgs/logo.png" class="w-20 h-20 rounded-full" alt="">
+      <span class="text-3xl font-semibold tracking-wide">CafData</span>
     </div>
 
-    <section class="grid grid-cols-3 gap-4 mb-4">
-      <article class="bg-white rounded-lg p-4 grid grid-cols-[56px_1fr] gap-3">
-        <div class="w-14 h-14 rounded-xl bg-coffee-200"></div>
-        <div><h3 class="m-0 mb-1.5 text-sm text-text-700">Ítems en stock</h3><p class="m-0 font-bold">173,000</p><span class="inline-block py-1 px-2 rounded-full text-xs bg-[#e6f6ee] text-success">+5%</span></div>
+    <!-- MENÚ -->
+    <nav class="flex flex-col gap-1">
+
+      <a href="index.html" class="flex items-center gap-3 py-3 px-4 rounded-lg text-coffee-200 hover:bg-coffee-400 hover:text-coffee-cream">
+        <i class="fa-regular fa-circle"></i>
+        <span class="text-3xl">Dashboard</span>
+      </a>
+
+      <a href="inventario.html" class="flex items-center gap-3 py-3 px-4 rounded-lg text-coffee-200 hover:bg-coffee-400 hover:text-coffee-cream">
+        <i class="fa-solid fa-boxes-stacked"></i>
+        <span class="text-3xl">Inventario</span>
+      </a>
+
+      <a href="ventas.html" class="flex items-center gap-3 py-3 px-4 rounded-lg text-coffee-200 hover:bg-coffee-400 hover:text-coffee-cream">
+        <i class="fa-solid fa-dollar-sign"></i>
+        <span class="text-3xl">Ventas</span>
+      </a>
+
+      <a href="clientes.html" class="flex items-center gap-3 py-3 px-4 rounded-lg text-coffee-200 hover:bg-coffee-400 hover:text-coffee-cream">
+        <i class="fa-regular fa-user"></i>
+        <span class="text-3xl">Clientes</span>
+      </a>
+
+      <a href="reportes.html" class="flex items-center gap-3 py-3 px-4 rounded-lg text-coffee-200 hover:bg-coffee-400 hover:text-coffee-cream">
+        <i class="fa-regular fa-file-lines"></i>
+        <span class="text-3xl">Reportes</span>
+      </a>
+
+      <a href="personal.html" class="flex items-center gap-3 py-3 px-4 rounded-lg text-coffee-200 hover:bg-coffee-400 hover:text-coffee-cream">
+        <i class="fa-regular fa-id-badge"></i>
+        <span class="text-3xl">Personal</span>
+      </a>
+
+      <a href="notificaciones.html" class="flex items-center gap-3 py-3 px-4 rounded-lg text-coffee-200 hover:bg-coffee-400 hover:text-coffee-cream relative">
+        <i class="fa-regular fa-bell"></i>
+        <span class="text-3xl">Notificaciones</span>
+      </a>
+
+      <a href="configuracion.html" class="flex items-center gap-3 py-3 px-4 rounded-lg text-coffee-200 hover:bg-coffee-400 hover:text-coffee-cream">
+        <i class="fa-solid fa-gear"></i>
+        <span class="text-3xl">Configuración</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="p-7 px-8 overflow-y-auto">   <!-- ← SIN FONDO AQUÍ -->
+
+    <header class="flex items-center justify-between mb-6">
+      <h1 class="text-3xl font-semibold text-coffee-primary">  <i>inventario </i></h1>
+
+      <div class="flex items-center gap-5">
+
+        <div class="relative cursor-pointer">
+          <i class="fa-regular fa-bell text-coffee-500 text-2xl"></i>
+        </div>
+
+        <div class="flex items-center gap-2 cursor-pointer">
+          <i class="fa-regular fa-user text-coffee-500 text-2xl"></i>
+          <span class="text-2xl text-coffee-500">Admin</span>
+          <i class="fa-solid fa-angle-down text-coffee-500"></i>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- BÚSQUEDA -->
+<div class="flex items-center justify-between mb-10">
+
+   <!-- IZQUIERDA: BUSCADOR -->
+  <div class="flex items-center bg-white border border-coffee-200 rounded-lg px-4 py-2 w-[320px]">
+    <i class="fa-solid fa-search text-coffee-secondary mr-2"></i>
+    <input type="text" placeholder="Buscar productos, clientes..."
+      class="w-full outline-none bg-transparent text-coffee-primary text-lg">
+  </div>
+
+  <!-- DERECHA: BOTONES -->
+  <div class="flex items-center gap-3">
+    <button class="border border-coffee-200 rounded-md px-6 py-2 text-lg text-coffee-secondary">
+      Exportar
+    </button>
+
+    <button class="border border-coffee-200 rounded-md px-4 py-2 text-lg text-coffee-secondary">
+      Importar
+    </button>
+
+    <button class="bg-coffee-500 text-white rounded-md px-4 py-2 text-lg">
+      Agregar cliente
+    </button>
+  </div>
+
+</div>
+
+    <!-- TARJETAS -->
+    <section class="grid grid-cols-3 gap-6 mb-10">
+
+      <article class="bg-coffee-100 rounded-xl p-6 shadow-sm border border-coffee-200">
+        <div class="w-12 h-12 rounded-xl bg-coffee-500 flex items-center justify-center text-coffee-cream text-lg mb-3">
+          <i class="fa-regular fa-user"></i>
+        </div>
+        <h3 class="text-coffee-secondary text-lg font-medium mb-1">Total productos</h3>
+        <p class="text-coffee-primary text-2xl font-bold mb-1">5</p>
+        <span class="bg-coffee-success/20 text-coffee-success text-lg px-2 py-1 rounded-full font-medium">+5 esta semana</span>
       </article>
-      <article class="bg-white rounded-lg p-4 grid grid-cols-[56px_1fr] gap-3">
-        <div class="w-14 h-14 rounded-xl bg-coffee-200"></div>
-        <div><h3 class="m-0 mb-1.5 text-sm text-text-700">Nuevos prod.</h3><p class="m-0 font-bold">5</p><span class="inline-block py-1 px-2 rounded-full text-xs bg-[#e6f6ee] text-success">Agregados</span></div>
+
+      <article class="bg-coffee-100 rounded-xl p-6 shadow-sm border border-coffee-200">
+        <div class="w-12 h-12 rounded-xl bg-coffee-500 flex items-center justify-center text-coffee-cream text-lg mb-3">
+          <i class="fa-regular fa-star"></i>
+        </div>
+        <h3 class="text-coffee-secondary text-lg font-medium mb-1">Stock bajo</h3>
+        <p class="text-coffee-primary text-2xl font-bold mb-1">3</p>
+        <span class="bg-coffee-danger/20 text-coffee-danger text-lg px-2 py-1 rounded-full font-medium">+5 esta semana</span>
       </article>
-      <article class="bg-white rounded-lg p-4 grid grid-cols-[56px_1fr] gap-3">
-        <div class="w-14 h-14 rounded-xl bg-coffee-200"></div>
-        <div><h3 class="m-0 mb-1.5 text-sm text-text-700">Bajo stock</h3><p class="m-0 font-bold">3</p><span class="inline-block py-1 px-2 rounded-full text-xs bg-[#fdeeee] text-danger">Atención</span></div>
+
+      <article class="bg-coffee-100 rounded-xl p-6 shadow-sm border border-coffee-200">
+        <div class="w-12 h-12 rounded-xl bg-coffee-500 flex items-center justify-center text-coffee-cream text-lg mb-3">
+          <i class="fa-regular fa-user"></i>
+        </div>
+        <h3 class="text-coffee-secondary text-lg font-medium mb-1">Valor total</h3>
+        <p class="text-coffee-primary text-2xl font-bold mb-1">$ 173.000</p>
+        <span class="bg-coffee-success/20 text-coffee-success text-lg px-2 py-1 rounded-full font-medium">+2,3%</span>
       </article>
+
     </section>
 
-    <section class="bg-white rounded-lg">
-      <div class="p-4 px-[18px] border-b border-[#efe7e2]"><h2 class="m-0 text-base">Lista de productos</h2></div>
-      <div class="w-full grid">
-        <div class="grid grid-cols-6 py-3.5 px-[18px] items-center font-semibold text-text-700 bg-coffee-100 rounded-t-lg">
-          <div class="text-sm">Producto</div><div class="text-sm">Categoría</div><div class="text-sm">Stock</div><div class="text-sm">Precio</div><div class="text-sm">Estado</div><div class="text-sm">Acciones</div>
-        </div>
-        <div class="table__row grid grid-cols-6 py-3.5 px-[18px] items-center">
-          <div class="text-sm">Café</div><div class="text-sm">Kg</div><div class="text-sm">15</div><div class="text-sm">$20,000</div><div class="text-sm">Disponible</div><div class="text-sm"><span class="text-coffee-700 underline cursor-default">Ver detalles</span></div>
-        </div>
-        <div class="table__row grid grid-cols-6 py-3.5 px-[18px] items-center">
-          <div class="text-sm">Azúcar</div><div class="text-sm">Kg</div><div class="text-sm">10</div><div class="text-sm">$40,000</div><div class="text-sm">Disponible</div><div class="text-sm"><span class="text-coffee-700 underline cursor-default">Ver detalles</span></div>
-        </div>
-        <div class="table__row grid grid-cols-6 py-3.5 px-[18px] items-center">
-          <div class="text-sm">Leche</div><div class="text-sm">Lt</div><div class="text-sm">8</div><div class="text-sm">$15,000</div><div class="text-sm">Agotado</div><div class="text-sm"><span class="text-coffee-700 underline cursor-default">Ver detalles</span></div>
-        </div>
+    <!-- TABLA -->
+    <section class="w-full h-120 bg-coffee-100 rounded-2xl border border-coffee-200 p-10 shadow-md mt-10">
+
+      <h2 class="text-coffee-primary text-2xl font-semibold mb-4">Lista de productos</h2>
+
+      <div class="grid grid-cols-6 py-3 px-2 border-b border-coffee-200 font-semibold text-coffee-secondary text-lg">
+        <div>Producto</div>
+        <div>Categoria</div>
+        <div>Stock</div>
+        <div>precio</div>
+        <div>Estado</div>
+        <div>Acciones</div>
       </div>
+
+      <div class="grid grid-cols-6 py-3 px-2 text-lg text-coffee-primary">
+        <div>Cafe</div>
+        <div>Kg</div>
+        <div>15</div>
+        <div >20.000</div>
+        <div>Disponible</div>
+        <div><span class="text-coffee-500 underline cursor-pointer">Ver detalles</span></div>
+      </div>
+
+      <div class="grid grid-cols-6 py-3 px-2 text-lg text-coffee-primary">
+        <div>Azucar</div>
+        <div>Kg</div>
+        <div>10</div>
+        <div >40.000</div>
+        <div>Disponible</div>
+        <div><span class="text-coffee-500 underline cursor-pointer">Ver detalles</span></div>
+      </div>
+
+      <div class="grid grid-cols-6 py-3 px-2 text-lg text-coffee-primary">
+        <div>Leche</div>
+        <div>Ml</div>
+        <div>0</div>
+        <div >15.000</div>
+        <div>Agotado</div>
+        <div><span class="text-coffee-500 underline cursor-pointer">Ver detalles</span></div>
+      </div>
+
     </section>
+
   </main>
 </body>
 

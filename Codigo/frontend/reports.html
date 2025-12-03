@@ -10,60 +10,198 @@
   <title>CafData</title>
 </head>
 
-<body class="grid grid-cols-[280px_1fr] h-screen m-0 text-text-900 bg-cream-50">
-  <aside class="bg-coffee-900 text-white p-6 px-4 flex flex-col gap-6">
-    <div class="flex items-center gap-3"><div class="font-bold tracking-wide">CafData</div></div>
-    <nav class="grid gap-1.5">
-      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="index.html"><span>Dashboard</span></a>
-      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="inventory.html"><span>Inventario</span></a>
-      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="sales.html"><span>Ventas</span></a>
-      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="clients.html"><span>Clientes</span></a>
-      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white bg-coffee-700 text-white" href="reports.html"><span>Reportes</span></a>
-      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="personal.html"><span>Personal</span></a>
-      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="notifications.html"><span>Notificaciones</span></a>
-      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="settings.html"><span>Configuración</span></a>
+<body class="grid grid-cols-[280px_1fr] h-screen m-0 bg-coffee-cream">
+
+  <!-- SIDEBAR -->
+  <aside class="bg-coffee-500 text-coffee-cream p-5 flex flex-col gap-6 w-[280px]">
+
+    <!-- LOGO + TEXTO -->
+    <div class="flex items-center gap-3 mb-4">
+      <img src="./src/imgs/logo.png" class="w-20 h-20 rounded-full" alt="">
+      <span class="text-2xl font-semibold tracking-wide">CafData</span>
+    </div>
+
+    <!-- MENÚ -->
+    <nav class="flex flex-col gap-1">
+
+      <a href="index.html" class="flex items-center gap-3 py-3 px-4 rounded-lg text-coffee-200 hover:bg-coffee-400 hover:text-coffee-cream">
+        <i class="fa-regular fa-circle"></i>
+        <span class="text-2xl">Dashboard</span>
+      </a>
+
+      <a href="inventario.html" class="flex items-center gap-3 py-3 px-4 rounded-lg text-coffee-200 hover:bg-coffee-400 hover:text-coffee-cream">
+        <i class="fa-solid fa-boxes-stacked"></i>
+        <span class="text-2xl">Inventario</span>
+      </a>
+
+      <a href="ventas.html" class="flex items-center gap-3 py-3 px-4 rounded-lg text-coffee-200 hover:bg-coffee-400 hover:text-coffee-cream">
+        <i class="fa-solid fa-dollar-sign"></i>
+        <span class="text-2xl">Ventas</span>
+      </a>
+
+      <a href="clientes.html" class="flex items-center gap-3 py-3 px-4 rounded-lg text-coffee-200 hover:bg-coffee-400 hover:text-coffee-cream">
+        <i class="fa-regular fa-user"></i>
+        <span class="text-2xl">Clientes</span>
+      </a>
+
+      <a href="reportes.html" class="flex items-center gap-3 py-3 px-4 rounded-lg text-coffee-200 hover:bg-coffee-400 hover:text-coffee-cream">
+        <i class="fa-regular fa-file-lines"></i>
+        <span class="text-2xl">Reportes</span>
+      </a>
+
+      <a href="personal.html" class="flex items-center gap-3 py-3 px-4 rounded-lg text-coffee-200 hover:bg-coffee-400 hover:text-coffee-cream">
+        <i class="fa-regular fa-id-badge"></i>
+        <span class="text-2xl">Personal</span>
+      </a>
+
+      <a href="notificaciones.html" class="flex items-center gap-3 py-3 px-4 rounded-lg text-coffee-200 hover:bg-coffee-400 hover:text-coffee-cream relative">
+        <i class="fa-regular fa-bell"></i>
+        <span class="text-2xl">Notificaciones</span>
+      </a>
+
+      <a href="configuracion.html" class="flex items-center gap-3 py-3 px-4 rounded-lg text-coffee-200 hover:bg-coffee-400 hover:text-coffee-cream">
+        <i class="fa-solid fa-gear"></i>
+        <span class="text-2xl">Configuración</span>
+      </a>
+
     </nav>
   </aside>
 
+
   <main class="bg-cream-50 p-7 px-8 overflow-y-auto">
-    <header class="flex items-center justify-between mb-5"><h1 class="m-0 text-xl">Gestión de reportes</h1></header>
+    <header class="flex items-center justify-between mb-6">
+      <h1 class="text-3xl font-semibold text-coffee-primary">Gestion De Reporte</h1>
 
-    <section class="grid grid-cols-4 gap-4 mb-5.5">
-      <article class="bg-white rounded-lg p-4 grid grid-cols-[56px_1fr] gap-3">
-        <div class="w-14 h-14 rounded-xl bg-coffee-200"></div>
-        <div><h3 class="m-0 mb-1.5 text-sm text-text-700">Reporte de ventas</h3><p class="m-0 text-xl font-bold">Listo</p></div>
-      </article>
-      <article class="bg-white rounded-lg p-4 grid grid-cols-[56px_1fr] gap-3">
-        <div class="w-14 h-14 rounded-xl bg-coffee-200"></div>
-        <div><h3 class="m-0 mb-1.5 text-sm text-text-700">Reporte de clientes</h3><p class="m-0 text-xl font-bold">Pendiente</p></div>
-      </article>
-      <article class="bg-white rounded-lg p-4 grid grid-cols-[56px_1fr] gap-3">
-        <div class="w-14 h-14 rounded-xl bg-coffee-200"></div>
-        <div><h3 class="m-0 mb-1.5 text-sm text-text-700">Reporte inventario</h3><p class="m-0 text-xl font-bold">Listo</p></div>
-      </article>
-      <article class="bg-white rounded-lg p-4 grid grid-cols-[56px_1fr] gap-3">
-        <div class="w-14 h-14 rounded-xl bg-coffee-200"></div>
-        <div><h3 class="m-0 mb-1.5 text-sm text-text-700">Reporte de personal</h3><p class="m-0 text-xl font-bold">Listo</p></div>
-      </article>
-    </section>
+      <div class="flex items-center gap-5">
 
-    <section class="bg-white rounded-lg">
-      <div class="p-4 px-[18px] border-b border-[#efe7e2]"><h2 class="m-0 text-base">Lista de reportes</h2></div>
-      <div class="w-full grid">
-        <div class="grid grid-cols-6 py-3.5 px-[18px] items-center font-semibold text-text-700 bg-coffee-100 rounded-t-lg">
-          <div class="text-sm">Nombre</div><div class="text-sm">Estado</div><div class="text-sm">Fecha</div><div class="text-sm">Tipo</div><div class="text-sm">Acciones</div><div class="text-sm"></div>
+        <div class="relative cursor-pointer">
+          <i class="fa-regular fa-bell text-coffee-500 text-2xl"></i>
         </div>
-        <div class="table__row grid grid-cols-6 py-3.5 px-[18px] items-center">
-          <div class="text-sm">Reporte_financiero_05082025</div><div class="text-sm">Completado</div><div class="text-sm">05/08/2025</div><div class="text-sm">Financiero</div><div class="text-sm"><span class="text-coffee-700 underline cursor-default">Ver detalles</span></div><div class="text-sm"></div>
+
+        <div class="flex items-center gap-2 cursor-pointer">
+          <i class="fa-regular fa-user text-coffee-500 text-2xl"></i>
+          <span class="text-2xl text-coffee-500">Admin</span>
+          <i class="fa-solid fa-angle-down text-coffee-500"></i>
         </div>
-        <div class="table__row grid grid-cols-6 py-3.5 px-[18px] items-center">
-          <div class="text-sm">Reporte_general_07082025</div><div class="text-sm">Completado</div><div class="text-sm">07/08/2025</div><div class="text-sm">General</div><div class="text-sm"><span class="text-coffee-700 underline cursor-default">Ver detalles</span></div><div class="text-sm"></div>
-        </div>
-        <div class="table__row grid grid-cols-6 py-3.5 px-[18px] items-center">
-          <div class="text-sm">Reporte_inventario_08052025</div><div class="text-sm">Completado</div><div class="text-sm">20/09/2025</div><div class="text-sm">Inventario</div><div class="text-sm"><span class="text-coffee-700 underline cursor-default">Ver detalles</span></div><div class="text-sm"></div>
-        </div>
+
       </div>
+    </header>
+
+    <div class="flex items-center gap-3 mb-8">
+
+    <button class="border border-coffee-200 rounded-md px-4 py-1 text-xl text-coffee-secondary">
+      Exportar
+    </button>
+
+    <button class="border border-coffee-200 rounded-md px-4 py-1 text-xl text-coffee-secondary">
+      Programar reporte
+    </button>
+
+    <button class="bg-coffee-500 text-white rounded-md px-4 py-1 text-xl">
+      <Var>Crear reporte</Var>
+    </button>
+  </div>
+
+</div>
+
+
+
+   <section class="grid grid-cols-3 gap-6 mb-10">
+
+      <article class="bg-coffee-100 rounded-xl p-6 shadow-sm border border-coffee-200">
+        <div class="w-12 h-12 rounded-xl bg-coffee-500 flex items-center justify-center text-coffee-cream text-lg mb-3">
+          <i class="fa-regular fa-user"></i>
+        </div>
+        <h3 class="text-coffee-primary text-2xl font-medium mb-1">Reporte de ventas</h3>
+        <p class="text-coffee-secondary text-xl font-bold mb-1">Analisis detallado de ventas,tendencias y rendimiento</p>
+      </article>
+
+      <article class="bg-coffee-100 rounded-xl p-6 shadow-sm border border-coffee-200">
+        <div class="w-12 h-12 rounded-xl bg-coffee-500 flex items-center justify-center text-coffee-cream text-lg mb-3">
+          <i class="fa-regular fa-star"></i>
+        </div>
+        <h3 class="text-coffee-primary text-2xl font-medium mb-1">Reporte de inventario</h3>
+        <p class="text-coffee-secondary text-xl font-bold mb-1">Control de stock,moviemientos y alertas de inventario</p>
+      </article>
+
+      <article class="bg-coffee-100 rounded-xl p-6 shadow-sm border border-coffee-200">
+        <div class="w-12 h-12 rounded-xl bg-coffee-500 flex items-center justify-center text-coffee-cream text-lg mb-3">
+          <i class="fa-regular fa-user"></i>
+        </div>
+        <h3 class="text-coffee-primary text-2xl font-medium mb-1">Reporte de clientes</h3>
+        <p class="text-coffee-secondary text-xl font-bold mb-1">Analisis de comportamiento y segimiento de clientes</p>
+      </article>
+
     </section>
+
+<section class="grid grid-cols-3 gap-6 mb-10">
+
+      <article class="bg-coffee-100 rounded-xl p-6 shadow-sm border border-coffee-200">
+        <div class="w-12 h-12 rounded-xl bg-coffee-500 flex items-center justify-center text-coffee-cream text-lg mb-3">
+          <i class="fa-regular fa-user"></i>
+        </div>
+        <h3 class="text-coffee-primary text-2xl font-medium mb-1">Reporte de personal</h3>
+        <p class="text-coffee-secondary text-xl font-bold mb-1">Horarios,productividad y gestions del personal</p>
+      </article>
+
+      <article class="bg-coffee-100 rounded-xl p-6 shadow-sm border border-coffee-200">
+        <div class="w-12 h-12 rounded-xl bg-coffee-500 flex items-center justify-center text-coffee-cream text-lg mb-3">
+          <i class="fa-regular fa-star"></i>
+        </div>
+        <h3 class="text-coffee-primary text-2xl font-medium mb-1">Reporte financiero</h3>
+        <p class="text-coffee-secondary text-xl font-bold mb-1">Analisis financiero,costosy tentabilidad</p>
+      </article>
+
+      <article class="bg-coffee-100 rounded-xl p-6 shadow-sm border border-coffee-200">
+        <div class="w-12 h-12 rounded-xl bg-coffee-500 flex items-center justify-center text-coffee-cream text-lg mb-3">
+          <i class="fa-regular fa-user"></i>
+        </div>
+        <h3 class="text-coffee-primary text-2xl font-medium mb-1">Reporte personalizado</h3>
+        <p class="text-coffee-secondary text-lg font-bold mb-1">Crea reportes especificos segun tus necesidades</p>
+      </article>
+
+    </section>
+
+
+    <!-- TABLA -->
+    <section class="w-full bg-coffee-100 rounded-2xl border border-coffee-200 p-10 shadow-md mt-12">
+
+      <h2 class="text-coffee-primary text-2xl font-semibold mb-4">Lista de clientes</h2>
+
+      <div class="grid grid-cols-5 py-3 px-2 border-b border-coffee-200 font-semibold text-coffee-secondary text-xl">
+        <div>Nombre</div>
+        <div>Estado</div>
+        <div>Fecha</div>
+        <div>Tipo</div>
+        <div>Acciones</div>
+      </div>
+
+      <div class="grid grid-cols-5 py-3 px-2 text-xl text-coffee-primary">
+        <div>Reporte_finaciero_05062025</div>
+        <div>Completado</div>
+        <div class="font-bold">09/05/2025</div>
+        <div>Financiero</div>
+        <div><span class="text-coffee-500 underline cursor-pointer">Ver detalles</span></div>
+      </div>
+
+      <div class="grid grid-cols-5 py-3 px-2 text-xl text-coffee-primary">
+        <div>Reporte_general_07'32'25</div>
+        <div>Completado</div>
+        <div class="font-bold">05/06/2025</div>
+        <div>Personalizado</div>
+        <div><span class="text-coffee-500 underline cursor-pointer">Ver detalles</span></div>
+      </div>
+
+      <div class="grid grid-cols-5 py-3 px-2 text-xl text-coffee-primary">
+        <div>Reporte_inventario_09052</div>
+        <div>Completado</div>
+        <div class="font-bold">20/09/2025</div>
+        <div>Inventario</div>
+        <div><span class="text-coffee-500 underline cursor-pointer">Ver detalles</span></div>
+      </div>
+
+    </section>
+
   </main>
 </body>
 
