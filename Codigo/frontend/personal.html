@@ -10,50 +10,178 @@
   <title>CafData</title>
 </head>
 
-<body class="grid grid-cols-[280px_1fr] h-screen m-0 text-text-900 bg-cream-50">
-  <aside class="bg-coffee-900 text-white p-6 px-4 flex flex-col gap-6">
-    <div class="flex items-center gap-3"><div class="font-bold tracking-wide">CafData</div></div>
-    <nav class="grid gap-1.5">
-      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="index.html"><span>Dashboard</span></a>
-      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="inventory.html"><span>Inventario</span></a>
-      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="sales.html"><span>Ventas</span></a>
-      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="clients.html"><span>Clientes</span></a>
-      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="reports.html"><span>Reportes</span></a>
-      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white bg-coffee-700 text-white" href="personal.html"><span>Personal</span></a>
-      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="notifications.html"><span>Notificaciones</span></a>
-      <a class="no-underline text-[#eaddd6] py-3 px-3.5 rounded-[10px] flex items-center gap-2.5 hover:bg-coffee-800 hover:text-white" href="settings.html"><span>Configuración</span></a>
+<body class="grid grid-cols-[280px_1fr] h-screen m-0 bg-coffee-cream">
+
+   <!-- SIDEBAR -->
+  <aside class="bg-coffee-500 text-coffee-cream p-5 flex flex-col gap-6 w-[280px]">
+
+    <!-- LOGO + TEXTO -->
+    <div class="flex items-center gap-3 mb-4">
+      <img src="./src/imgs/logo.png" class="w-20 h-20 rounded-full" alt="">
+      <span class="text-3xl font-semibold tracking-wide">CafData</span>
+    </div>
+
+    <!-- MENÚ -->
+    <nav class="flex flex-col gap-1">
+
+      <a href="index.html" class="flex items-center gap-3 py-3 px-4 runded-xl text-coffee-200 hover:bg-coffee-400 hover:text-coffee-cream">
+        <i class="fa-regular fa-circle"></i>
+        <span class="text-3xl">Dashboard</span>
+      </a>
+
+      <a href="inventario.html" class="flex items-center gap-3 py-3 px-4 rounded-lg text-coffee-200 hover:bg-coffee-400 hover:text-coffee-cream">
+        <i class="fa-solid fa-boxes-stacked"></i>
+        <span class="text-3xl">Inventario</span>
+      </a>
+
+      <a href="ventas.html" class="flex items-center gap-3 py-3 px-4 rounded-lg text-coffee-200 hover:bg-coffee-400 hover:text-coffee-cream">
+        <i class="fa-solid fa-dollar-sign"></i>
+        <span class="text-3xl">Ventas</span>
+      </a>
+
+      <a href="clientes.html" class="flex items-center gap-3 py-3 px-4 rounded-lg text-coffee-200 hover:bg-coffee-400 hover:text-coffee-cream">
+        <i class="fa-regular fa-user"></i>
+        <span class="text-3xl">Clientes</span>
+      </a>
+
+      <a href="reportes.html" class="flex items-center gap-3 py-3 px-4 rounded-lg text-coffee-200 hover:bg-coffee-400 hover:text-coffee-cream">
+        <i class="fa-regular fa-file-lines"></i>
+        <span class="text-3xl">Reportes</span>
+      </a>
+
+      <a href="personal.html" class="flex items-center gap-3 py-3 px-4 rounded-lg text-coffee-200 hover:bg-coffee-400 hover:text-coffee-cream">
+        <i class="fa-regular fa-id-badge"></i>
+        <span class="text-3xl">Personal</span>
+      </a>
+
+      <a href="notificaciones.html" class="flex items-center gap-3 py-3 px-4 rounded-lg text-coffee-200 hover:bg-coffee-400 hover:text-coffee-cream relative">
+        <i class="fa-regular fa-bell"></i>
+        <span class="text-3xl">Notificaciones</span>
+      </a>
+
+      <a href="configuracion.html" class="flex items-center gap-3 py-3 px-4 rounded-lg text-coffee-200 hover:bg-coffee-400 hover:text-coffee-cream">
+        <i class="fa-solid fa-gear"></i>
+        <span class="text-3xl">Configuración</span>
+      </a>
+
     </nav>
   </aside>
-  <main class="bg-cream-50 p-7 px-8 overflow-y-auto">
-    <header class="flex items-center justify-between mb-5"><h1 class="m-0 text-xl">Gestión de Personal</h1></header>
 
-    <section class="grid grid-cols-3 gap-4 mb-4">
-      <article class="bg-white rounded-lg p-4 grid grid-cols-[56px_1fr] gap-3">
-        <div class="w-14 h-14 rounded-xl bg-coffee-200"></div>
-        <div><h3 class="m-0 mb-1.5 text-sm text-text-700">Total empleados</h3><p class="m-0 font-bold">12</p><span class="inline-block py-1 px-2 rounded-full text-xs bg-[#e6f6ee] text-success">+2</span></div>
+  <main class="bg-cream-50 p-10 px-10 overflow-y-auto">
+    <header class="flex items-center justify-between mb-6">
+      <h1 class="text-2xl font-semibold text-coffee-primary">Gestion De Personal</h1>
+
+      <div class="flex items-center gap-5">
+
+        <div class="relative cursor-pointer">
+          <i class="fa-regular fa-bell text-coffee-500 text-2xl"></i>
+        </div>
+
+        <div class="flex items-center gap-2 cursor-pointer">
+          <i class="fa-regular fa-user text-coffee-500 text-2xl"></i>
+          <span class="text-lg text-coffee-500">Admin</span>
+          <i class="fa-solid fa-angle-down text--coffee-500"></i>
+        </div>
+
+      </div>
+    </header>
+
+    
+    <!-- BÚSQUEDA -->
+    <div class="flex items-center justify-between mb-10">
+
+  <!-- IZQUIERDA: BUSCADOR -->
+  <div class="flex items-center bg-white border border-coffee-200 rounded-2xl px-4 py-2 w-[280px]">
+    <i class="fa-solid fa-search text-coffee-secondary mr-2"></i>
+    <input type="text" placeholder="Buscar empleados ..."
+      class="w-full outline-none bg-transparent text-coffee-primary text-lg">
+  </div>
+
+    <button class="bg-coffee-500 text-white rounded-md px-4 py-2 text-lg">
+      Agregar empleados
+    </button>
+  </div>
+
+    <!-- TARJETAS -->
+    <section class="grid grid-cols-3 gap-6 mb-10">
+
+      <article class="bg-coffee-100 rounded-xl p-6 shadow-sm border border-coffee-200">
+        <div class="w-12 h-12 rounded-xl bg-coffee-500 flex items-center justify-center text-coffee-cream text-lg mb-3">
+          <i class="fa-regular fa-user"></i>
+        </div>
+        <h3 class="text-coffee-secondary text-lg font-medium mb-1">Total empleados</h3>
+        <p class="text-coffee-primary text-2xl font-bold mb-1">5</p>
+        <span class="bg-coffee-success/20 text-coffee-success text-xs px-2 py-1 rounded-full font-medium">+2 este mes</span>
       </article>
-      <article class="bg-white rounded-lg p-4 grid grid-cols-[56px_1fr] gap-3">
-        <div class="w-14 h-14 rounded-xl bg-coffee-200"></div>
-        <div><h3 class="m-0 mb-1.5 text-sm text-text-700">Empleados activos</h3><p class="m-0 font-bold">10</p><span class="inline-block py-1 px-2 rounded-full text-xs bg-[#e6f6ee] text-success">80%</span></div>
+
+      <article class="bg-coffee-100 rounded-xl p-6 shadow-sm border border-coffee-200">
+        <div class="w-12 h-12 rounded-xl bg-coffee-500 flex items-center justify-center text-coffee-cream text-lg mb-3">
+          <i class="fa-regular fa-star"></i>
+        </div>
+        <h3 class="text-coffee-secondary text-lg font-medium mb-1">Empleados activos</h3>
+        <p class="text-coffee-primary text-2xl font-bold mb-1">10</p>
+        <span class="bg-coffee-success/20 text-coffee-success text-xs px-2 py-1 rounded-full font-medium">100%</span>
       </article>
-      <article class="bg-white rounded-lg p-4 grid grid-cols-[56px_1fr] gap-3">
-        <div class="w-14 h-14 rounded-xl bg-coffee-200"></div>
-        <div><h3 class="m-0 mb-1.5 text-sm text-text-700">Turnos de hoy</h3><p class="m-0 font-bold">8</p><span class="inline-block py-1 px-2 rounded-full text-xs bg-[#fff6e9] text-warning">En progreso</span></div>
+
+      <article class="bg-coffee-100 rounded-xl p-6 shadow-sm border border-coffee-200">
+        <div class="w-12 h-12 rounded-xl bg-coffee-500 flex items-center justify-center text-coffee-cream text-lg mb-3">
+          <i class="fa-regular fa-user"></i>
+        </div>
+        <h3 class="text-coffee-secondary text-lg font-medium mb-1">Turnos hoy</h3>
+        <p class="text-coffee-primary text-2xl font-bold mb-1">0</p>
+        <span class="bg-coffee-success/20 text-coffee-success text-xs px-2 py-1 rounded-full font-medium">Completos</span>
       </article>
+
     </section>
 
-    <section class="bg-white rounded-lg p-4 grid grid-cols-2 gap-4">
-      <div class="bg-white rounded-xl p-4 text-left">
-        <div class="font-bold">Mario Hernández</div>
-        <div class="text-text-700">Cajero</div>
-        <div class="inline-block py-1 px-2 rounded-full text-xs bg-[#fff6e9] text-warning mt-2">12:00 - 19:00</div>
+    <section class="mt-10">
+  <h1 class="text-2xl font-semibold text-coffee-primary mb-4">Turnos activos</h1>
+
+  <div class="grid grid-cols-2 gap-6">
+
+    <!-- TURNO 1 -->
+    <div class="bg-coffee-100 p-6 rounded-xl border border-[#C7EBC7] shadow-md">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-12 h-12 bg-coffee-500 text-white rounded-xl flex items-center justify-center">
+          <i class="fa-regular fa-user"></i>
+        </div>
+        <div>
+          <p class="font-semibold">María González</p>
+          <p class="text-lg text-coffee-secondary">Cajero</p>
+        </div>
       </div>
-      <div class="bg-white rounded-xl p-4 text-left">
-        <div class="font-bold">Ana Martínez</div>
-        <div class="text-text-700">Mesera</div>
-        <div class="inline-block py-1 px-2 rounded-full text-xs bg-[#e6f6ee] text-success mt-2">09:00 - 17:00</div>
+
+      <p class="text-lg text-coffee-secondary mb-1">08:00 - 16:00</p>
+      <p class="text-lg text-coffee-secondary mb-4">6h 30m trabajados</p>
+
+      <button class="px-4 py-1 border border-coffee-300 rounded-md text-lg">
+        Finalizar turno
+      </button>
+    </div>
+
+    <!-- TURNO 2 -->
+    <div class="bg-coffee-100 p-6 rounded-xl border border-[#C7EBC7] shadow-sm">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-12 h-12 bg-coffee-500 text-white rounded-xl flex items-center justify-center">
+          <i class="fa-regular fa-user"></i>
+        </div>
+        <div>
+          <p class="font-semibold">Ana Martínez</p>
+          <p class="text-lg text-coffee-secondary">Mesera</p>
+        </div>
       </div>
-    </section>
+
+      <p class="text-lg text-coffee-secondary mb-1">12:00 - 20:00</p>
+      <p class="text-lg text-coffee-secondary mb-4">Descanso: 15min</p>
+
+      <button class="px-4 py-1 border border-coffee-300 rounded-md text-lg">
+        Reanudar
+      </button>
+    </div>
+
+  </div>
+</section>
+
   </main>
 </body>
 
