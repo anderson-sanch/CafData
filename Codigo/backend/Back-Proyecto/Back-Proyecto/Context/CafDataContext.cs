@@ -1,6 +1,7 @@
-﻿using System;
-using Back_Proyecto.Models;
+﻿using Back_Proyecto.Models;
+using Back_Proyecto.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace Back_Proyecto.Context
 {
@@ -23,6 +24,7 @@ namespace Back_Proyecto.Context
         public DbSet<Clients>Clients { get; set; }
         public DbSet<Products> Products { get; set; }
         public DbSet<Discounts> Discounts { get; set; }
+        public DbSet<InventoryMovement> InventoryMovement { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -217,6 +219,55 @@ namespace Back_Proyecto.Context
                       .WithMany(g => g.DiscountedProducts)
                       .HasForeignKey(dp => dp.Global_Id);
             });
+
+            modelBuilder.Entity<InventoryMovement>(entity =>
+            {
+                entity.HasKey(e => e.Movement_Id);
+
+                entity.ToTable("Inventory_Movement");
+
+                entity.Property(e => e.Movement_Id)
+                    .HasColumnName("Movement_Id")
+                    .IsRequired();
+
+                entity.Property(e => e.Product_Id)
+                    .HasColumnName("Product_Id")
+                    .IsRequired();
+
+                entity.Property(e => e.Type_Movement)
+                    .HasColumnName("Type_Movement")
+                    .HasColumnType("nvarchar(20)")
+                    .IsRequired();
+
+                entity.Property(e => e.Quantity)
+                    .HasColumnName("Quantity")
+                    .IsRequired();
+
+                entity.Property(e => e.Reason)
+                    .HasColumnName("Reason")
+                    .HasColumnType("nvarchar(20)")
+                    .IsRequired();
+
+                entity.Property(e => e.Date_Movement)
+                    .HasColumnName("Date_Movement")
+                    .HasColumnType("datetime")
+                    .IsRequired();
+
+                entity.Property(e => e.User_Id)
+                    .HasColumnName("User_Id")
+                    .IsRequired();
+
+                entity.HasOne(e => e.Product)
+                    .WithMany()
+                    .HasForeignKey(e => e.Product_Id)
+                    .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasOne(e => e.User)
+                    .WithMany()
+                    .HasForeignKey(e => e.User_Id)
+                    .OnDelete(DeleteBehavior.Restrict);
+            });
+
 
         }
     }
