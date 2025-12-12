@@ -44,9 +44,7 @@ namespace Back_Proyecto.Repositories
             var c = await GetCompany_Id(id);
             if (c == null) return false;
 
-            // Si quieres inactivar el registro
-            // Agrega un campo "Status" en Company
-            // y cámbialo aquí
+            
 
             await _context.SaveChangesAsync();
             return true;

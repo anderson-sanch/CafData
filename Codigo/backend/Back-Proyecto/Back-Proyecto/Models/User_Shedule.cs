@@ -1,16 +1,21 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Back_Proyecto.Models
 {
-    public class User_Shedule
+    public class User_Schedule
     {
         [Key]
-        public Guid Id_Shedule { get; set; }
-        public Guid User_Id { get; set; }
-        public DateTime Check_Int_Time { get; set; }
-        public DateTime Check_Out_Time { get; set; }
-        public string Weekday { get; set; }
-    }
+        public Guid Schedules_Id { get; set; }
 
+        public Guid User_Id { get; set; }
+
+        public TimeSpan Check_In_Time { get; set; }
+
+        public TimeSpan Check_Out_Time { get; set; }
+
+        public string Weekday { get; set; }
+
+        public Users User { get; set; }
+    }
 }

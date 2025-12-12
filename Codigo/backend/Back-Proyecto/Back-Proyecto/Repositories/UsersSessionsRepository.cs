@@ -19,7 +19,7 @@ namespace Back_Proyecto.Repositories
         // ============================================================
         public async Task<List<User_Sessions>> GetUsers_Sessions()
         {
-            return await _context.User_Sessions
+            return await _context.Users_Sesions     // ← AQUI EL CAMBIO
                 .Include(x => x.User)
                 .OrderByDescending(x => x.Start_Date)
                 .ToListAsync();
@@ -30,7 +30,7 @@ namespace Back_Proyecto.Repositories
         // ============================================================
         public async Task<User_Sessions> GetUser_Session_Id(Guid id)
         {
-            var session = await _context.User_Sessions
+            var session = await _context.Users_Sesions   // ← AQUI EL CAMBIO
                 .Include(x => x.User)
                 .FirstOrDefaultAsync(x => x.Id_Session == id);
 
@@ -54,7 +54,7 @@ namespace Back_Proyecto.Repositories
             if (session.Start_Date == default)
                 session.Start_Date = DateTime.UtcNow;
 
-            _context.User_Sessions.Add(session);
+            _context.Users_Sesions.Add(session);   // ← AQUI EL CAMBIO
             await _context.SaveChangesAsync();
             return session;
         }
@@ -64,7 +64,7 @@ namespace Back_Proyecto.Repositories
         // ============================================================
         public async Task<User_Sessions> UpdateUser_Session(User_Sessions session)
         {
-            var existing = await _context.User_Sessions.FindAsync(session.Id_Session);
+            var existing = await _context.Users_Sesions.FindAsync(session.Id_Session); // ← CAMBIO
 
             if (existing == null)
                 throw new KeyNotFoundException("Sesión no encontrada para actualización.");
@@ -84,12 +84,12 @@ namespace Back_Proyecto.Repositories
         // ============================================================
         public async Task<bool> DeleteUser_Session(Guid id)
         {
-            var existing = await _context.User_Sessions.FindAsync(id);
+            var existing = await _context.Users_Sesions.FindAsync(id); // ← CAMBIO
 
             if (existing == null)
                 return false;
 
-            _context.User_Sessions.Remove(existing);
+            _context.Users_Sesions.Remove(existing); // ← CAMBIO
             await _context.SaveChangesAsync();
 
             return true;

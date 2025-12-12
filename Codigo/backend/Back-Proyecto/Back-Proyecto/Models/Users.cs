@@ -20,6 +20,10 @@ namespace Back_Proyecto.Models
         public Guid Rol_Id { get; set; } // Foreign key to Roles
         public Roles? Rol { get; set; } = null; // Navigation property to Roles
 
+        [NotMapped]
+        public string rol_name { get; set; }
+
+
         public UserStatus Status { get; set; } // User's status (e.g., Active, Inactive)
 
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]

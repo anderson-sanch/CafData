@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Back_Proyecto.Models
 {
@@ -15,7 +14,6 @@ namespace Back_Proyecto.Models
         public string Payment_Method { get; set; }
         public string Status { get; set; }
         public decimal Total_Discount { get; set; }
-        public decimal Type_Discount { get; set; }
+        public string Type_Discount { get; set; }  // ✔ CAMBIADO A STRING
     }
-
 }

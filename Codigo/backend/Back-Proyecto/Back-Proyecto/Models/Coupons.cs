@@ -13,7 +13,7 @@ namespace Back_Proyecto.Models
         public decimal Value { get; set; }
         public DateTime Start_Date { get; set; }
         public DateTime End_Date { get; set; }
-        public int Maximmum_Use { get; set; }
+        public int Maximum_Use { get; set; }
         public int Time_Used { get; set; }
         public bool Status { get; set; }
         public string Description { get; set; }

@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Back_Proyecto.Models
 {
+    [Table("Sale_Detail")]
     public class Sale_Detail
 
     {
@@ -14,6 +15,5 @@ namespace Back_Proyecto.Models
         public decimal Unit_Price { get; set; }
         public decimal Subtotal { get; set; }
         public decimal Discount_Applied { get; set; }
-
     }
 }

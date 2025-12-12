@@ -1,17 +1,16 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Back_Proyecto.Models
 {
     public class System_Log
     {
         [Key]
-        public Guid Log_Id { get; set; }
+        public Guid Id_Logs { get; set; }
         public Guid User_Id { get; set; }
-        public string Action { get; set; }
+        public string Acction { get; set; }
         public string Description { get; set; }
-        public DateTime date { get; set; }
+        public DateTime Date { get; set; }
         public string Module { get; set; }
-
     }
 }

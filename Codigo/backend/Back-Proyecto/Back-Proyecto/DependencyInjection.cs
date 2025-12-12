@@ -4,6 +4,7 @@ using Back_Proyecto.Repositories;
 using Back_Proyecto.Repositories.Implementations;
 using Back_Proyecto.Repositories.interfaces;
 using Back_Proyecto.Repositories.Interfaces;
+using Back_Proyecto.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace Back_Proyecto
@@ -25,8 +26,15 @@ namespace Back_Proyecto
             services.AddScoped<IDiscounts, DiscountsRepository>();
             services.AddScoped<IGlobalDiscounts, GlobalDiscountsRepository>();
             services.AddScoped<IDiscountedProducts, DiscountedProductsRepository>();
-
-
+            services.AddScoped<IPriceHistory, PriceHistoryRepository>();
+            services.AddScoped<ISales,SalesRepository >();
+            services.AddScoped<IUsers_Sessions, UserSessionsRepository>();
+            services.AddScoped<ISale_Detail,SaleDetailRepository >();
+            services.AddScoped<ICoupons, CouponsRepository>();
+            services.AddScoped<ICompany, CompanyRepository>();
+            services.AddScoped<IAttendanceLogService, AttendanceLogRepository>();
+            services.AddScoped<ISystemLogService,SystemLogRepository >();
+            services.AddScoped<IUserSheduleService, UserSheduleRepository>();
 
 
 
