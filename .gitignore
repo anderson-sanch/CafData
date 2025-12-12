@@ -419,3 +419,5 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+/Codigo/backend/Back-Proyecto/Back-Proyecto/NewFolder4
+/.gitignore
